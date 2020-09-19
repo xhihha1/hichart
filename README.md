@@ -29,7 +29,7 @@
 
 ## Fabric.js 展示  
 
-![line](readme/fabricDemo.jpg)    
+![Fabric](readme/fabricDemo.jpg)    
 
 ------------
 
