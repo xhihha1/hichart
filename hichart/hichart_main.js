@@ -192,11 +192,11 @@ hichart.prototype.drawAxis = function(){
 	//context.translate(-1 * 0, -1 * 0);
 	//context.scale(Math.abs(1 / scaleX), Math.abs(1 / scaleY));
 	
-	context.lineWidth = 3;
-	context.strokeStyle="#00FF00";
-	context.beginPath();
-	context.arc(0, 0, 20, 0, 2 * Math.PI);
-	context.stroke();
+	// context.lineWidth = 3;
+	// context.strokeStyle="#00FF00";
+	// context.beginPath();
+	// context.arc(0, 0, 20, 0, 2 * Math.PI);
+	// context.stroke();
 	// console.log(this.chartType)
 	
 }

@@ -1,0 +1,285 @@
+<html>
+<head>
+	<title>Bar Graph</title>
+<style>#canvas{background: #ffffff;
+        box-shadow:5px 5px 5px #ccc;
+		border:5px solid #eee;
+        margin-bottom:10px;}</style>
+        
+        <script src="hichart/hiChart_main.js"></script>
+        <script src="hichart/hichart_calculate.js"></script>
+        <script src="hichart/hiChart_bar.js"></script>
+        <script src="hichart/hiChart_stackedBar.js"></script>
+        <script src="hichart/hiChart_line.js"></script>
+        <script src="hichart/hiChart_pie.js"></script>
+        <script src="hichart/hiChart_polar.js"></script>
+        <script src="hichart/hiChart_basicPie.js"></script>
+        <script src="hichart/hiChart_area.js"></script>
+        <script src="hichart/hiChart_stackedArea.js"></script>
+        <script src="hichart/hichart_radar.js"></script>
+
+        <script src="js/fabric.min.js"></script>
+    </head>
+<body>
+    <canvas id="canvas" width='800' height='800'></canvas>
+
+</body>
+
+<script type="text/javascript">
+var canvas = new fabric.Canvas('canvas', {
+  height: window.innerHeight - 50, // 讓畫布同視窗大小
+  width: window.innerWidth - 50, // 讓畫布同視窗大小
+  isDrawingMode: false, // 設置成 true 一秒變身小畫家
+  hoverCursor: 'progress', // 移動時鼠標顯示
+  freeDrawingCursor: 'all-scroll', // 畫畫模式時鼠標模式
+  //backgroundColor: 'rgb(255,255,255)' // 背景色,
+});//声明画布
+
+const circle = new fabric.Circle({
+  radius: 30,
+  fill: 'red', // 填色,
+  top: 10,
+  left: 0
+})
+canvas.add(circle)//加入到canvas中
+
+
+const MyBar = new fabric.util.createClass(fabric.Rect, {
+  initialize (height, width) {
+    this.height = height || 100
+    this.width = width || 100
+  },
+  getArea () {
+    return this.height * this.width
+  },
+  _render (ctx) {
+    // 先畫出原本的圖形
+    this.callSuper('_render', ctx)
+    var A = new hichart('Bar',ctx,{x:-1*this.width/2,y:-1*this.height/2,width:this.width, height:this.height},{
+		series:[{
+			data:[14, 7, 4.2, 4, 3.5, 14, 7, 4.2, 4, 3.5, 8, 5.5]
+		}]
+	})
+  }
+})
+var bar = new MyBar(200, 200)
+canvas.add(bar)
+
+
+const MyLine = new fabric.util.createClass(fabric.Rect, {
+  initialize (height, width) {
+    this.height = height || 100
+    this.width = width || 100
+  },
+  getArea () {
+    return this.height * this.width
+  },
+  _render (ctx) {
+    // 先畫出原本的圖形
+    this.callSuper('_render', ctx)
+    var B = new hichart('Line',ctx,{x:-1*this.width/2,y:-1*this.height/2,width:this.width, height:this.height}, {
+		sections:12,
+		Val_max:130,
+		Val_min:-40,
+		stepSize:10,
+		xAxis:{
+			categories:["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+		}
+	})
+  }
+})
+var line = new MyLine(200, 200)
+canvas.add(line)
+
+
+const MyArea = new fabric.util.createClass(fabric.Rect, {
+  initialize (height, width) {
+    this.height = height || 100
+    this.width = width || 100
+  },
+  getArea () {
+    return this.height * this.width
+  },
+  _render (ctx) {
+    // 先畫出原本的圖形
+    this.callSuper('_render', ctx)
+    var B = new hichart('Area',ctx,{x:-1*this.width/2,y:-1*this.height/2,width:this.width, height:this.height}, {
+		sections:12,
+		Val_max:130,
+		Val_min:-40,
+		stepSize:10,
+		xAxis:{
+			categories:["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+		},
+		series:[
+			{
+				data:[30, 50, 70, 80, 90, 100, 95, 91, 85, 92, 99, 130],
+				color: "#2dc4f6",
+				linearGradient:[{position:0,color:"rgba(0,0,0,0.2)"},{position:1,color:"#2dc4f6"}]
+			}
+		]
+	})
+  }
+})
+var area = new MyArea(200, 200)
+canvas.add(area)
+
+
+
+const MyPie = new fabric.util.createClass(fabric.Rect, {
+  initialize (height, width) {
+    this.height = height || 100
+    this.width = width || 100
+  },
+  getArea () {
+    return this.height * this.width
+  },
+  _render (ctx) {
+    // 先畫出原本的圖形
+    this.callSuper('_render', ctx)
+    var A = new hichart('BasicPie',ctx,{x:-1*this.width/2,y:-1*this.height/2,width:this.width, height:this.height},{
+		sections:1,
+		Val_max: 10,
+		Val_min: 0,
+		stepSize:2,
+		columnSize:0,
+		rowSize:0,
+		margin:5,
+		xAxis:{
+			showGrid: false,
+			gridLineWidth: 0
+		},
+		yAxis:{
+			showGrid: false,
+			gridLineWidth: 0
+		},
+		series:[{
+			data: [
+                {value: 335, name: '直接访问'},
+                {value: 310, name: '邮件营销'},
+                {value: 234, name: '联盟广告'},
+                {value: 135, name: '视频广告'},
+                {value: 548, name: '搜索引擎'}
+            ],
+			color: "#d9406f",
+			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
+		}]
+	})
+  }
+})
+var pie = new MyPie(200, 200)
+canvas.add(pie)
+
+
+const MyRadar = new fabric.util.createClass(fabric.Rect, {
+  initialize (height, width) {
+    this.height = height || 100
+    this.width = width || 100
+  },
+  getArea () {
+    return this.height * this.width
+  },
+  _render (ctx) {
+    // 先畫出原本的圖形
+    this.callSuper('_render', ctx)
+    var B = new hichart('Radar',ctx,{x:-1*this.width/2,y:-1*this.height/2,width:this.width, height:this.height}, {
+		sections:12,
+		Val_max:130,
+		Val_min: 0,
+		stepSize:10,
+		xAxis:{
+			showGrid: false,
+			gridLineWidth: 0
+		},
+		yAxis:{
+			showGrid: false,
+			gridLineWidth: 0
+		},
+        radar: {
+            // shape: 'circle',
+            name: {
+                enable: false,
+                textStyle: {
+                    color: '#fff',
+                    backgroundColor: '#999',
+                    borderRadius: 3,
+                    padding: [3, 5]
+                }
+            },
+            indicator: [
+                { name: 'sales', max: 6500},
+                { name: 'Administration', max: 16000},
+                { name: 'Information Techology', max: 30000},
+                { name: 'Customer Support', max: 38000},
+                { name: 'Development', max: 52000},
+                { name: 'Marketing', max: 25000}
+            ]
+        },
+		series:[
+			{
+				data:[4300, 10000, 28000, 35000, 50000, 19000],
+				color: "#d9406f"
+            },
+            {
+				data:[5000, 14000, 28000, 31000, 42000, 21000],
+				color: "#edc214"
+			}
+		]
+	})
+  }
+})
+var radar = new MyRadar(200, 200)
+canvas.add(radar)
+
+
+var dataSets = [];
+for (var i = 0; i <= 360; i++) {
+		var t = i / 180 * Math.PI;
+		var r = Math.sin(2 * t) * Math.cos(2 * t);
+		dataSets.push([r, i]);
+}
+const MyPolar = new fabric.util.createClass(fabric.Rect, {
+  initialize (height, width, dataSets) {
+    this.height = height || 100
+    this.width = width || 100
+    this.dataSets = dataSets;
+  },
+  getArea () {
+    return this.height * this.width
+  },
+  _render (ctx) {
+    // 先畫出原本的圖形
+    this.callSuper('_render', ctx)
+    var A = new hichart('Polar',ctx,{x:-1*this.width/2,y:-1*this.height/2,width:this.width, height:this.height},{
+		sections:1,
+		Val_max: 0.5,
+		Val_min: 0,
+		stepSize: 0.1,
+		columnSize:0,
+		rowSize:0,
+		margin:5,
+		xAxis:{
+			showGrid: false,
+			gridLineWidth: 0
+		},
+		yAxis:{
+			showGrid: false,
+			gridLineWidth: 0
+		},
+		series:[{
+			data: this.dataSets,
+			color: "#d9406f",
+			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
+		}]
+    })
+  }
+})
+var polar = new MyPolar(200, 200, dataSets)
+canvas.add(polar)
+
+
+</script>
+
+
+
+</html>    
