@@ -48,7 +48,8 @@ hichart.prototype.plotPolarData = function (dataSet) {
                 context.lineTo(centerX + r* Math.cos(theta), centerY + r* Math.sin(theta) + stickSize)
                 context.stroke();
                 context.textBaseline = "top";
-                context.fillText(Val_min + stepSize * j, centerX + r* Math.cos(theta), centerY + r* Math.sin(theta) + stickSize*2);
+                var text = typeof(this.accAdd) == 'function'? this.accAdd(Val_min , this.accMul(stepSize , j)) : Val_min + stepSize * j;
+                context.fillText(text, centerX + r* Math.cos(theta), centerY + r* Math.sin(theta) + stickSize*2);
             }
             context.textBaseline = "alphabetic";
         }

@@ -20,271 +20,34 @@ var itemName = [ "USA", "China", "India", "Japan" , "Germany"];
 var itemValue = [ 14, 7, 4.2, 4, 3.5 ];
 
 
-// stacked percentage bar
+// stacked percentage bar (OK)
 // stacked group bar
-// basic area
-// stacked area
+// basic area (OK)
+// stacked area (OK)
 // percentage area
-// basic pie
-
-
+// basic pie (OK)
 
 function run (){
-    var canvas1 = document.getElementById("canvas1");
-    var context1 = canvas1.getContext("2d");
-    /*context1.fillStyle = '#FF0000';
-    context1.fillRect(0,0, canvas1.width,canvas1.height);*/
-    var A = new hichart('Bar',context1,canvas1,{
-		series:[{
-			data:[14, 7, 4.2, 4, 3.5, 14, 7, 4.2, 4, 3.5, 8, 5.5],
-			color: "#d9406f",
-			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#2dc4f6"}]
-		},{
-			data:[0, 2, 4.2, 4, 3.5, 0, 1, 4.2, 4, 3.5, 2, 5.5],
-			color: "#4e94ab",
-			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
-		}]
-	})
-	
-	var canvas2 = document.getElementById("canvas2");
-    var context2 = canvas2.getContext("2d");
-	/*context2.fillStyle = '#00FF00';
-    context2.fillRect(0,0, canvas2.width,canvas2.height);*/
-    var B = new hichart('Line',context2,canvas2, {
-		sections:12,
-		Val_max:130,
-		Val_min:-40,
-		stepSize:10,
-		xAxis:{
-			categories:["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-		},
-		series:[
-			{
-				data:[30, 50, 70, 80, 90, 100, 95, 91, 85, 92, 99, 130],
-				color: "#d9406f",
-				linearGradient:[{position:0,color:"#000000"},{position:1,color:"#2dc4f6"}]
-			},
-			{
-				data:[20, -10, -20, -25, -40, 5, 10, 28, 30, 43, 65, 80],
-				color: "#4e94ab",
-				linearGradient:[{position:0,color:"#000000"},{position:1,color:"#4e94ab"}]
-			}
-		]
-	})
-	
-	var canvas3 = document.getElementById("canvas3");
-    var context3 = canvas3.getContext("2d");
-    var C = new hichart('Pie',context3,{x:0,y:0,width:300,height:300},{
-		sections:1,
-		Val_max: 1,
-		Val_min: 0,
-		columnSize:0,
-		rowSize:0,
-		margin:0,
-		xAxis:{
-			showGrid: false,
-			gridLineWidth: 0
-		},
-		yAxis:{
-			showGrid: false,
-			gridLineWidth: 0
-		}
-	})
-	
-	var canvas5 = document.getElementById("canvas5");
-    var context5 = canvas5.getContext("2d");
-	var D = new hichart('StackedBar',context5,canvas5,{
-		series:[{
-			data:[14, 7, 4.2, 4, 3.5, 14, 7, 4.2, 4, 3.5, 8, 5.5],
-			color: "#d9406f",
-			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
-		},{
-			data:[0, 2, 4.2, 4, 3.5, 0, 1, 4.2, 4, 3.5, 2, 5.5],
-			color: "#4e94ab",
-			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#edc214"}]
-		}]
-	})
-
-	var canvas6 = document.getElementById("canvas6");
-    var context6= canvas6.getContext("2d");
-	var data = [];
-	for (var i = 0; i <= 100; i++) {
-		var theta = i / 100 * 360;
-		var r = 5 * (1 + Math.sin(theta / 180 * Math.PI));
-		data.push([r, theta]);
-	}
-    var A = new hichart('Polar',context6,{x:0,y:0,width:300,height:300},{
-		sections:1,
-		Val_max: 10,
-		Val_min: 0,
-		stepSize:2,
-		columnSize:0,
-		rowSize:0,
-		margin:5,
-		xAxis:{
-			showGrid: false,
-			gridLineWidth: 0
-		},
-		yAxis:{
-			showGrid: false,
-			gridLineWidth: 0
-		},
-		series:[{
-			data: data,
-			color: "#d9406f",
-			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
-		}]
-	})
-
-	var canvas7 = document.getElementById("canvas7");
-    var context7= canvas7.getContext("2d");
-    var A = new hichart('BasicPie',context7,{x:0,y:0,width:300,height:300},{
-		sections:1,
-		Val_max: 10,
-		Val_min: 0,
-		stepSize:2,
-		columnSize:0,
-		rowSize:0,
-		margin:5,
-		xAxis:{
-			showGrid: false,
-			gridLineWidth: 0
-		},
-		yAxis:{
-			showGrid: false,
-			gridLineWidth: 0
-		},
-		series:[{
-			text:{
-				enable:true
-			},
-			data: [
-                {value: 335, name: '直接访问'},
-                {value: 310, name: '邮件营销', linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]},
-                {value: 234, name: '联盟广告'},
-                {value: 135, name: '视频广告'},
-                {value: 248, name: '搜索引擎'}
-            ],
-			color: "#555555",
-			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
-		}]
-	})
-	
-	
 	//-------------------------------------------------------------------------------------------
-	var canvas4 = document.getElementById("canvas4");
-    var context4 = canvas4.getContext("2d");
-	var A = new hichart('Bar',context4,{x:0,y:0,width:150,height:150,},{
-		series:[{
-			data:[14, 7, 4.2, 4, 3.5, 14, 7, 4.2, 4, 3.5, 8, 5.5]
-		}]
-	})
-	var B = new hichart('Line',context4,{x:150,y:0,width:150,height:150}, {
-		sections:12,
-		Val_max:130,
-		Val_min:-40,
-		stepSize:10,
-		xAxis:{
-			categories:["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-		}
-	})
-	var C = new hichart('Pie',context4,{x:0,y:150,width:150,height:150},{
-		sections:1,
-		Val_max: 1,
-		Val_min: 0,
-		columnSize:0,
-		rowSize:0,
-		margin:5,
-		xAxis:{
-			showGrid: false,
-			gridLineWidth: 0
-		},
-		yAxis:{
-			showGrid: false,
-			gridLineWidth: 0
-		}
-	})
-	var D = new hichart('StackedBar',context4,{x:150,y:150,width:150,height:150},{
-		series:[{
-			data:[14, 7, 4.2, 4, 3.5, 14, 7, 4.2, 4, 3.5, 8, 5.5],
-			color: "#d9406f",
-			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
-		},{
-			data:[0, 2, 4.2, 4, 3.5, 0, 1, 4.2, 4, 3.5, 2, 5.5],
-			color: "#4e94ab",
-			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#edc214"}]
-		}]
-	})
-
-	var data = [];
-	for (var i = 0; i <= 100; i++) {
-		var theta = i / 100 * 360;
-		var r = 5 * (1 + Math.sin(theta / 180 * Math.PI));
-		data.push([r, theta]);
-	}
-    var E = new hichart('Polar',context4,{x:300,y:0,width:150,height:150},{
-		sections:1,
-		Val_max: 10,
-		Val_min: 0,
-		stepSize:2,
-		columnSize:0,
-		rowSize:0,
-		margin:5,
-		xAxis:{
-			showGrid: false,
-			gridLineWidth: 0
-		},
-		yAxis:{
-			showGrid: false,
-			gridLineWidth: 0
-		},
-		series:[{
-			data: data,
-			color: "#d9406f",
-			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
-		}]
-	})
-
-	var A = new hichart('BasicPie',context4,{x:300,y:150,width:150,height:150},{
-		sections:1,
-		Val_max: 10,
-		Val_min: 0,
-		stepSize:2,
-		columnSize:0,
-		rowSize:0,
-		margin:5,
-		xAxis:{
-			showGrid: false,
-			gridLineWidth: 0
-		},
-		yAxis:{
-			showGrid: false,
-			gridLineWidth: 0
-		},
-		series:[{
-			data: [
-                {value: 335, name: '直接访问'},
-                {value: 310, name: '邮件营销'},
-                {value: 234, name: '联盟广告'},
-                {value: 135, name: '视频广告'},
-                {value: 548, name: '搜索引擎'}
-            ],
-			color: "#d9406f",
-			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
-		}]
-	})
-
-
+	sample1()
+	sample()
 }
 
 </script>
 <script src="hichart/hiChart_main.js"></script>
+<script src="hichart/hichart_calculate.js"></script>
 <script src="hichart/hiChart_bar.js"></script>
 <script src="hichart/hiChart_stackedBar.js"></script>
 <script src="hichart/hiChart_line.js"></script>
 <script src="hichart/hiChart_pie.js"></script>
 <script src="hichart/hiChart_polar.js"></script>
 <script src="hichart/hiChart_basicPie.js"></script>
+<script src="hichart/hiChart_area.js"></script>
+<script src="hichart/hiChart_stackedArea.js"></script>
+<script src="hichart/hichart_radar.js"></script>
+
+<script src="sample1.js"></script>
+<script src="sample.js"></script>
 </head>
 
 <body onLoad="run()">
@@ -298,6 +61,11 @@ function run (){
 <canvas id="canvas5" height="300" width="300"></canvas>
 <canvas id="canvas6" height="300" width="300"></canvas>
 <canvas id="canvas7" height="300" width="300"></canvas>
+<canvas id="canvas8" height="300" width="300"></canvas>
+<canvas id="canvas9" height="300" width="300"></canvas>
+<canvas id="canvas10" height="300" width="300"></canvas>
+<canvas id="canvas11" height="300" width="300"></canvas>
+<canvas id="canvas12" height="300" width="300"></canvas>
 <br>
 <canvas id="canvas4" height="300" width="1200"></canvas>
 </div>

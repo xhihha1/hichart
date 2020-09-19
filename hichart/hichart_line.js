@@ -1,3 +1,8 @@
+hichart.prototype.defaultLineOptions = function (dataSet) {}
+
+hichart.prototype.replotLineData = function (dataSet) {}
+
+
 hichart.prototype.plotLineData = function (dataSet) {
     var context = this.context;
     var sections = this.options.sections;
