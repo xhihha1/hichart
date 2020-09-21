@@ -18,11 +18,23 @@ function hichart(chartType, g, rect, options){
 			size:3
 		},
         xAxis:{
+			label:{
+				enableRotate: false,
+				rotate: 0,
+				textBaseline: 'alphabetic',
+				textAlign: 'start'
+			},
 			showGrid: true,
 			gridLineWidth: 1,
 			categories:["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 		},
         yAxis:{
+			label:{
+				enableRotate: false,
+				rotate: 0,
+				textBaseline: 'alphabetic',
+				textAlign: 'start'
+			},
 			showGrid: true,
 			gridLineWidth: 1,
 			data:[14, 7, 4.2, 4, 3.5]
@@ -127,12 +139,26 @@ hichart.prototype.drawAxis = function(){
 		var x = rowSize + i * xScale + this.rect.x;
         var y = this.canvasHeight + margin - columnSize + this.rect.y;
 		if(xAxis['showGrid']){
-			context.fillText(xAxis['categories'][i], x, y);
+			if(xAxis.label && xAxis.label.enableRotate){
+				context.translate(x, y);
+				context.rotate(-1* xAxis.label['rotate'] * Math.PI/180);
+				context.textBaseline = xAxis.label['textBaseline'];
+				context.textAlign = xAxis.label['textAlign'];
+				context.fillText(xAxis['categories'][i], 0, 0);
+				context.rotate( xAxis.label['rotate'] *Math.PI/180);
+				context.translate(-1*x, -1*y);
+			} else {
+				context.textBaseline = xAxis.label['textBaseline'];
+				context.textAlign = xAxis.label['textAlign'];
+				context.fillText(xAxis['categories'][i], x, y);
+			}
 			context.moveTo(x, margin + this.rect.y);
 			context.lineTo(x, this.canvasHeight - columnSize + this.rect.y);
 		}
 		endVirticalX = x;
 	}
+	context.textBaseline = "alphabetic";
+    context.textAlign = "start";
 
     var count =  0;
 	context.lineWidth = yAxis['gridLineWidth'];
@@ -140,7 +166,19 @@ hichart.prototype.drawAxis = function(){
         var x = margin + this.rect.x;
 		var y = (yScale * count * stepSize) + margin + this.rect.y; 
 		if(yAxis['showGrid']){
-			context.fillText(scale, x, y);
+			if(yAxis.label && yAxis.label.enableRotate){
+				context.translate(x, y);
+				context.rotate(-1* yAxis.label['rotate'] * Math.PI/180);
+				context.textBaseline = yAxis.label['textBaseline'];
+				context.textAlign = yAxis.label['textAlign'];
+				context.fillText(yAxis['categories'][i], 0, 0);
+				context.rotate( yAxis.label['rotate'] *Math.PI/180);
+				context.translate(-1*x, -1*y);
+			} else {
+				context.textBaseline = yAxis.label['textBaseline'];
+				context.textAlign = yAxis.label['textAlign'];
+				context.fillText(scale, x, y);
+			}
 			context.moveTo(rowSize + this.rect.x,y)
 			context.lineTo(endVirticalX,y)
 		}
@@ -171,7 +209,7 @@ hichart.prototype.drawAxis = function(){
 		//this.plotLineData(dataSet);
 		this['plot'+chartType+'Data'](dataSet);
 	} else if(chartType == 'Pie'){
-		var dataSet = [14, 7, 4.2, 4, 3.5];
+		// var dataSet = [14, 7, 4.2, 4, 3.5];
 		//this.plotBarData(dataSet);
 		this['plot'+chartType+'Data'](dataSet);
 	} else if(chartType == 'Polar'){

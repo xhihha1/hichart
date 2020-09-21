@@ -21,10 +21,18 @@ function sample1(){
     context2.fillRect(0,0, canvas2.width,canvas2.height);*/
     var B = new hichart('Line',context2,canvas2, {
 		sections:12,
+		columnSize: 40,
+		rowSize: 40,
 		Val_max:130,
 		Val_min:-40,
 		stepSize:10,
 		xAxis:{
+			label:{
+				enableRotate: true,
+				rotate: 60,
+				textBaseline: 'top',
+				textAlign: 'right'
+			},
 			categories:["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 		},
 		series:[
@@ -43,13 +51,31 @@ function sample1(){
 	
 	var canvas3 = document.getElementById("canvas3");
     var context3 = canvas3.getContext("2d");
-    var C = new hichart('Pie',context3,{x:0,y:0,width:300,height:300},{
+    // var C = new hichart('Pie',context3,{x:0,y:0,width:300,height:300},{
+	// 	sections:1,
+	// 	Val_max: 1,
+	// 	Val_min: 0,
+	// 	columnSize:0,
+	// 	rowSize:0,
+	// 	margin:0,
+	// 	xAxis:{
+	// 		showGrid: false,
+	// 		gridLineWidth: 0
+	// 	},
+	// 	yAxis:{
+	// 		showGrid: false,
+	// 		gridLineWidth: 0
+	// 	}
+	// })
+
+	var A = new hichart('Pie',context3,{x:0,y:0,width:300,height:300},{
 		sections:1,
 		Val_max: 1,
 		Val_min: 0,
+		stepSize:2,
 		columnSize:0,
 		rowSize:0,
-		margin:0,
+		margin:5,
 		xAxis:{
 			showGrid: false,
 			gridLineWidth: 0
@@ -57,8 +83,23 @@ function sample1(){
 		yAxis:{
 			showGrid: false,
 			gridLineWidth: 0
-		}
+		},
+		series:[{
+			text:{
+				enable:true
+			},
+			data: [ 
+                {value: 14, name: '直接访问'},
+                {value: 7, name: '邮件营销', linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]},
+                {value: 4.2, name: '联盟广告'},
+                {value: 4, name: '视频广告'},
+                {value: 3.5, name: '搜索引擎'}
+            ],
+			color: "#555555",
+			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
+		}]
 	})
+
 	
 	var canvas5 = document.getElementById("canvas5");
     var context5 = canvas5.getContext("2d");

@@ -29,7 +29,21 @@ function sample(){
 		yAxis:{
 			showGrid: false,
 			gridLineWidth: 0
-		}
+		},
+		series:[{
+			text:{
+				enable:true
+			},
+			data: [ 
+                {value: 14, name: '直接访问'},
+                {value: 7, name: '邮件营销', linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]},
+                {value: 20.2, name: '联盟广告'},
+                {value: 4, name: '视频广告'},
+                {value: 3.5, name: '搜索引擎'}
+            ],
+			color: "#555555",
+			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
+		}]
 	})
 	var D = new hichart('StackedBar',context4,{x:150,y:150,width:150,height:150},{
 		series:[{

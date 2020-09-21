@@ -6,6 +6,7 @@ hichart.prototype.plotPieData = function (dataSet) {
     }
     //this.options = Object.assign({}, pieOptions, this.options);
     this.options = this.mergeDeep(pieOptions, this.options);
+    var series = this.options.series;
     var rect = this.rect;
     var context = this.context;
     var margin = this.options.margin;
@@ -22,15 +23,20 @@ hichart.prototype.plotPieData = function (dataSet) {
     var innerCircleRadius = pieInnerRdius - radius_margin;
     var unitDegree = 2 * Math.PI / 360;
     var shiftDegree = -90 * unitDegree;
-    var valueList = dataSet;
-    var colorList = ['#93AFC0', '#FCFCFE', '#6FC5D6', '#CDA07B', '#626063', '#93AFC0', '#FCFCFE', '#6FC5D6', '#CDA07B', '#626063'];
+    var valueList = [];
+    // var colorList = ['#93AFC0', '#FCFCFE', '#6FC5D6', '#CDA07B', '#626063', '#93AFC0', '#FCFCFE', '#6FC5D6', '#CDA07B', '#626063'];
+    var colorList = this.options.colorList
     var borderColor = this.options.borderColor;
     var valueRateList;
     //******************
     context.scale((1 / this.scaleX), (1 / this.scaleY));
     context.translate(this.translateX, -1 * this.translateY);
     //******************
-
+    for (var s = 0; s < series.length; s++) {
+        for(var d = 0; d < series[s]['data'].length; d++){
+            valueList.push(series[s]['data'][d]['value']);
+        }
+    }
     //---------------------
 
     var valueSum = valueList.reduce((a, b) => a + b);
@@ -38,8 +44,8 @@ hichart.prototype.plotPieData = function (dataSet) {
         return Math.round(x / valueSum * 100) / 100
     });
     var valueGridList = valueRateList.map(x => Math.round(x * 36));
-    valueGridList = [15.5, 15.5, 5]
-    console.log(valueGridList)
+    // valueGridList = [15.5, 15.5, 5]
+    // console.log(valueGridList)
 
     context.lineWidth = 1;
     context.fillStyle = borderColor;
