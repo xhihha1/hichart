@@ -1,3 +1,13 @@
+hichart.prototype.defaultBasicPieOptions = function () {
+    var pieOptions = {
+        pie:{
+            degreeStep: 30
+        }
+    }
+    this.options = this.mergeDeep(pieOptions, this.options);
+    return this;
+}
+
 hichart.prototype.plotBasicPieData = function (dataSet) {
     var context = this.context;
     var sections = this.options.sections;
@@ -15,12 +25,8 @@ hichart.prototype.plotBasicPieData = function (dataSet) {
     var stepSize = this.options.stepSize;
     var stickSize = this.options.stick.size;
 
-    var polarOptions = {
-        polar:{
-            degreeStep: 30
-        }
-    }
-    this.options = this.mergeDeep(polarOptions, this.options);
+    this.defaultBasicPieOptions()
+
     //context.fillRect(0,0, rect.width, rect.height);
     //******************
     // context.scale((1 / this.scaleX), (1 / this.scaleY));

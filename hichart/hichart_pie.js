@@ -1,4 +1,4 @@
-hichart.prototype.plotPieData = function (dataSet) {
+hichart.prototype.defaultPieOptions = function () {
     var pieOptions = {
         centerFontSize: 20,
         centerFontText: 100,
@@ -6,6 +6,12 @@ hichart.prototype.plotPieData = function (dataSet) {
     }
     //this.options = Object.assign({}, pieOptions, this.options);
     this.options = this.mergeDeep(pieOptions, this.options);
+    return this;
+}
+
+hichart.prototype.plotPieData = function (dataSet) {
+    this.defaultPieOptions();
+    
     var series = this.options.series;
     var rect = this.rect;
     var context = this.context;

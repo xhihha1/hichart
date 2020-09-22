@@ -1,4 +1,9 @@
-hichart.prototype.plotRadarData = function (dataSet) {
+
+hichart.prototype.defaultRadarOptions = function () {
+
+}
+
+hichart.prototype.plotRadarData = function () {
     var context = this.context;
     var sections = this.options.sections;
     var xScale = this.xScale;

@@ -80,34 +80,8 @@ hichart.prototype.drawAxis = function(){
 	context.translate(translateX, translateY);
     context.scale(scaleX, scaleY);
     //**********************************
-	// if(chartType == 'Bar'){
-	// 	var dataSet = [14, 7, 4.2, 4, 3.5, 14, 7, 4.2, 4, 3.5, 8, 5.5];
-	// 	//this.plotBarData(dataSet);
-	// 	this['plot'+chartType+'Data'](dataSet);
-	// } else if(chartType == 'StackedBar'){
-	// 	this['plot'+chartType+'Data']();
-	// } else if(chartType == 'Line'){
-	// 	var dataSet = [30, 50, 70, 80, 90, 100, 95, 91, 85, 92, 99, 130];
-	// 	context.strokeStyle="#d9406f"; 
-	// 	//this.plotLineData(dataSet);
-	// 	this['plot'+chartType+'Data'](dataSet);
-	// 	dataSet = [20, -10, -20, -25, -40, 5, 10, 28, 30, 43, 65, 80];
-	// 	context.strokeStyle="#4e94ab"; 
-	// 	//this.plotLineData(dataSet);
-	// 	this['plot'+chartType+'Data'](dataSet);
-	// } else if(chartType == 'Pie'){
-	// 	// var dataSet = [14, 7, 4.2, 4, 3.5];
-	// 	//this.plotBarData(dataSet);
-	// 	this['plot'+chartType+'Data'](dataSet);
-	// } else if(chartType == 'Polar'){
-	// 	var dataSet = [14, 7, 4.2, 4, 3.5];
-	// 	//this.plotBarData(dataSet);
-	// 	this['plot'+chartType+'Data'](dataSet);
-	// } else {
-	// 	this['plot'+chartType+'Data']();
-	// }
-    
 
+    
 	/*context.strokeStyle="#FF0000";
 	context.beginPath();
 	context.arc(0, 0, 1, 0, 2 * Math.PI);
