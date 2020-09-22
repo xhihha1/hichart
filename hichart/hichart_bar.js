@@ -7,6 +7,17 @@ hichart.prototype.plotBarData = function(dataSet){
     var margin = this.options.margin;
 	var series = this.options.series;
 
+	var xAxis = this.options.xAxis;
+    var yAxis = this.options.yAxis;
+	var columnSize = this.options.columnSize;
+	var Val_max = this.options.Val_max;
+	var Val_min = this.options.Val_min;
+	var stepSize = this.options.stepSize;
+	var rowSize = this.options.rowSize;
+
+
+	this.drawAxis();
+
 	// single dataSet
 	/*
     // context.textBaseline="bottom";
@@ -30,7 +41,15 @@ hichart.prototype.plotBarData = function(dataSet){
         context.fillStyle = grd;
         context.fillRect(i, 0, 0.3, dataSet[i]);
 		// context.fillRect(i+1, 0, 0.3, dataSet[i]);
-    }*/
+	}*/
+	
+	var translateX = this.translateX = rowSize + this.rect.x;
+	var translateY = this.translateY = this.canvasHeight + Val_min * yScale - columnSize +  + this.rect.y;
+	var scaleX = this.scaleX = xScale;
+	var scaleY = this.scaleY = -1 * yScale;
+	// console.log(this.chartType, 'translateX',translateX, 'translateY',translateY, 'scaleX',scaleX, 'scaleY',scaleY)
+	context.translate(translateX, translateY);
+    context.scale(scaleX, scaleY);
 	
 	for(var s = 0; s < series.length;s++){
 		for (i=0;i<sections;i++) {
@@ -53,4 +72,8 @@ hichart.prototype.plotBarData = function(dataSet){
 			context.fillRect(i + barWidth*s, 0, barWidth, series[s]['data'][i]);
 		}
 	}
+
+	context.scale((1 / scaleX),(1 / scaleY));
+	context.translate(-1 * translateX, -1 * translateY);
+	return this;
 }

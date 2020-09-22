@@ -5,7 +5,23 @@ hichart.prototype.plotAreaData = function (dataSet) {
     var yScale = this.yScale;
     var series = this.options.series;
 
-    
+    var xAxis = this.options.xAxis;
+    var yAxis = this.options.yAxis;
+	var columnSize = this.options.columnSize;
+	var Val_max = this.options.Val_max;
+	var Val_min = this.options.Val_min;
+	var stepSize = this.options.stepSize;
+	var rowSize = this.options.rowSize;
+
+    this.drawAxis();
+
+    var translateX = this.translateX = rowSize + this.rect.x;
+	var translateY = this.translateY = this.canvasHeight + Val_min * yScale - columnSize +  + this.rect.y;
+	var scaleX = this.scaleX = xScale;
+	var scaleY = this.scaleY = -1 * yScale;
+	// console.log(this.chartType, 'translateX',translateX, 'translateY',translateY, 'scaleX',scaleX, 'scaleY',scaleY)
+	context.translate(translateX, translateY);
+    context.scale(scaleX, scaleY);
 
     for (var s = 0; s < series.length; s++) {
         context.beginPath();
@@ -38,4 +54,8 @@ hichart.prototype.plotAreaData = function (dataSet) {
         context.fill();
         // context.stroke();
     }
+
+    context.scale((1 / scaleX),(1 / scaleY));
+    context.translate(-1 * translateX, -1 * translateY);
+    return this;
 }

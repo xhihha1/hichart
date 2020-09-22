@@ -23,8 +23,8 @@ hichart.prototype.plotPolarData = function (dataSet) {
     this.options = this.mergeDeep(polarOptions, this.options);
     //context.fillRect(0,0, rect.width, rect.height);
     //******************
-    context.scale((1 / this.scaleX), (1 / this.scaleY));
-    context.translate(-1 * this.translateX, -1 * this.translateY);
+    // context.scale((1 / this.scaleX), (1 / this.scaleY));
+    // context.translate(-1 * this.translateX, -1 * this.translateY);
     //******************
 
     context.beginPath();
@@ -84,8 +84,8 @@ hichart.prototype.plotPolarData = function (dataSet) {
     }
     context.translate(-1*centerX, -1*centerY);
     //*********************
-    context.translate(this.translateX, this.translateY);
-    context.scale(this.scaleX, this.scaleY);
+    // context.translate(this.translateX, this.translateY);
+    // context.scale(this.scaleX, this.scaleY);
     //*********************
-    
+    return this;
 }

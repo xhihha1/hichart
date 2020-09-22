@@ -29,8 +29,8 @@ hichart.prototype.plotPieData = function (dataSet) {
     var borderColor = this.options.borderColor;
     var valueRateList;
     //******************
-    context.scale((1 / this.scaleX), (1 / this.scaleY));
-    context.translate(this.translateX, -1 * this.translateY);
+    // context.scale((1 / this.scaleX), (1 / this.scaleY));
+    // context.translate(this.translateX, -1 * this.translateY);
     //******************
     for (var s = 0; s < series.length; s++) {
         for(var d = 0; d < series[s]['data'].length; d++){
@@ -125,7 +125,8 @@ hichart.prototype.plotPieData = function (dataSet) {
 
 
     //*********************
-    context.translate(-1 * this.translateX, this.translateY);
-    context.scale(this.scaleX, this.scaleY);
+    // context.translate(-1 * this.translateX, this.translateY);
+    // context.scale(this.scaleX, this.scaleY);
     //*********************
+    return this;
 }
