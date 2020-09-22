@@ -16,7 +16,7 @@ hichart.prototype.plotBarData = function(dataSet){
 	var rowSize = this.options.rowSize;
 
 
-	this.drawAxis();
+	this.plotAxisData();
 
 	// single dataSet
 	/*

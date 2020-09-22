@@ -1,5 +1,4 @@
-
-hichart.prototype.drawAxis = function(){
+hichart.prototype.plotAxisData = function(){
 	var chartType = this.chartType;
 	var context = this.context;
     var xAxis = this.options.xAxis;
@@ -81,7 +80,7 @@ hichart.prototype.drawAxis = function(){
     context.scale(scaleX, scaleY);
     //**********************************
 
-    
+
 	/*context.strokeStyle="#FF0000";
 	context.beginPath();
 	context.arc(0, 0, 1, 0, 2 * Math.PI);

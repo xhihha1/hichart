@@ -13,7 +13,7 @@ hichart.prototype.plotStackedAreaData = function (dataSet) {
 	var stepSize = this.options.stepSize;
 	var rowSize = this.options.rowSize;
 
-    this.drawAxis();
+    this.plotAxisData();
 
     var translateX = this.translateX = rowSize + this.rect.x;
 	var translateY = this.translateY = this.canvasHeight + Val_min * yScale - columnSize +  + this.rect.y;
