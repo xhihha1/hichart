@@ -5,7 +5,6 @@ hichart.prototype.defaultRadarOptions = function () {
 
 hichart.prototype.plotRadarData = function () {
     var context = this.context;
-    var sections = this.options.sections;
     var xScale = this.xScale;
     var yScale = this.yScale;
     var series = this.options.series;
@@ -15,10 +14,6 @@ hichart.prototype.plotRadarData = function () {
     var centerX = rect.x + rect.width / 2;
     var centerY = rect.y + rect.height / 2;
     var radius = rect.width / 2 - 2 * margin;
-    var Val_max = this.options.Val_max;
-	var Val_min = this.options.Val_min;
-    var stepSize = this.options.stepSize;
-    var stickSize = this.options.stick.size;
     var radar = this.options.radar;
 
     //context.fillRect(0,0, rect.width, rect.height);

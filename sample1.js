@@ -69,21 +69,7 @@ function sample1(){
 	// })
 
 	var A = new hichart('Pie',context3,{x:0,y:0,width:300,height:300},{
-		sections:1,
-		Val_max: 1,
-		Val_min: 0,
-		stepSize:2,
-		columnSize:0,
-		rowSize:0,
 		margin:5,
-		xAxis:{
-			showGrid: false,
-			gridLineWidth: 0
-		},
-		yAxis:{
-			showGrid: false,
-			gridLineWidth: 0
-		},
 		series:[{
 			text:{
 				enable:true
@@ -128,17 +114,7 @@ function sample1(){
 		Val_max: 10,
 		Val_min: 0,
 		stepSize:2,
-		columnSize:0,
-		rowSize:0,
-		margin:5,
-		xAxis:{
-			showGrid: false,
-			gridLineWidth: 0
-		},
-		yAxis:{
-			showGrid: false,
-			gridLineWidth: 0
-		},
+		margin:10,
 		series:[{
 			data: data,
 			color: "#d9406f",
@@ -149,21 +125,7 @@ function sample1(){
 	var canvas7 = document.getElementById("canvas7");
     var context7= canvas7.getContext("2d");
     var A = new hichart('BasicPie',context7,{x:0,y:0,width:300,height:300},{
-		sections:1,
-		Val_max: 10,
-		Val_min: 0,
-		stepSize:2,
-		columnSize:0,
-		rowSize:0,
 		margin:5,
-		xAxis:{
-			showGrid: false,
-			gridLineWidth: 0
-		},
-		yAxis:{
-			showGrid: false,
-			gridLineWidth: 0
-		},
 		series:[{
 			text:{
 				enable:true
@@ -255,21 +217,10 @@ function sample1(){
 	}
 
     var A = new hichart('Polar',context11,{x:0,y:0,width:300,height:300},{
-		sections:1,
+		margin:5,
 		Val_max: 0.5,
 		Val_min: 0,
 		stepSize: 0.1,
-		columnSize:0,
-		rowSize:0,
-		margin:5,
-		xAxis:{
-			showGrid: false,
-			gridLineWidth: 0
-		},
-		yAxis:{
-			showGrid: false,
-			gridLineWidth: 0
-		},
 		series:[{
 			data: data,
 			color: "#d9406f",
@@ -282,18 +233,6 @@ function sample1(){
 	/*context2.fillStyle = '#00FF00';
     context2.fillRect(0,0, canvas2.width,canvas2.height);*/
     var B = new hichart('Radar',context12,canvas12, {
-		sections:12,
-		Val_max:130,
-		Val_min: 0,
-		stepSize:10,
-		xAxis:{
-			showGrid: false,
-			gridLineWidth: 0
-		},
-		yAxis:{
-			showGrid: false,
-			gridLineWidth: 0
-		},
         radar: {
             // shape: 'circle',
             name: {
