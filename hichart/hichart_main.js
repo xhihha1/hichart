@@ -99,11 +99,12 @@ hichart.prototype.mergeDeep = function(target, source) {
           if(typeof source[prop] !== 'object') {
             target[prop] = source[prop];
           } else {
-            if(target[prop].concat && source[prop].concat) {
-              target[prop] = target[prop].concat(source[prop]);
-            } else {
-              target[prop] = this.mergeDeep(target[prop], source[prop]); 
-            } 
+            // if(target[prop].concat && source[prop].concat) {
+            //   target[prop] = target[prop].concat(source[prop]);
+            // } else {
+            //   target[prop] = this.mergeDeep(target[prop], source[prop]); 
+			// } 
+			target[prop] = this.mergeDeep(target[prop], source[prop]); 
           }  
         }
       } else {
