@@ -250,7 +250,7 @@
 			data: [
                 {value: 335, name: '直接访问'},
                 {value: 310, name: '邮件营销', linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]},
-                {value: 234, name: '联盟广告'},
+                {value: 234, name: '联盟广告', radialGradient:[{position:0,color:"#000000"},{position:1,color:"#64A3D8"}]},
                 {value: 135, name: '视频广告'},
                 {value: 248, name: '搜索引擎'}
             ],
