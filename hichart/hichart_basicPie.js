@@ -47,6 +47,11 @@ hichart.prototype.plotBasicPieData = function (dataSet) {
                 for (g = 0; g < series[s]['data'][d]['linearGradient'].length; g++) {
                     grd.addColorStop(series[s]['data'][d]['linearGradient'][g]['position'], series[s]['data'][d]['linearGradient'][g]['color']);
                 }
+            } else if (series[s]['data'][d]['radialGradient']) {
+                grd = context.createRadialGradient(0, 0, 0, 0, 0, radius);
+                for (g = 0; g < series[s]['data'][d]['radialGradient'].length; g++) {
+                    grd.addColorStop(series[s]['data'][d]['radialGradient'][g]['position'], series[s]['data'][d]['radialGradient'][g]['color']);
+                }
             } else if (series[s]['data'][d]['color']) {
                 grd = series[s]['data'][d]['color']
             } else {

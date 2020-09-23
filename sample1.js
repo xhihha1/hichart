@@ -133,7 +133,7 @@ function sample1(){
 			data: [
                 {value: 335, name: '直接访问'},
                 {value: 310, name: '邮件营销', linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]},
-                {value: 234, name: '联盟广告'},
+                {value: 234, name: '联盟广告', radialGradient:[{position:0,color:"#000000"},{position:1,color:"#64A3D8"}]},
                 {value: 135, name: '视频广告'},
                 {value: 248, name: '搜索引擎'}
             ],
@@ -298,6 +298,28 @@ function sample1(){
 				linearGradient:[{position:0,color:"#000000"},{position:1,color:"#4e94ab"}]
 			}
 		]
+	})
+
+	var canvas14 = document.getElementById("canvas14");
+    var context14= canvas14.getContext("2d");
+    var A = new hichart('PhaseSequence',context14,{x:0,y:0,width:300,height:300},{
+		margin:5,
+		series:[{
+			text:{
+				enable:true
+			},
+			data: [
+				{ value: 50, degree: 0, max: 100, min: 0, distance: 1, radialGradient:[{position:0,color:"#000000"},{position:0.5,color:"#A7CC61"}] },
+				{ value: 60, degree: 30, max: 100, min: 0, distance: 1, radialGradient:[{position:0,color:"#000000"},{position:0.5,color:"#64A3D8"}] },
+				{ value: 70, degree: 60, max: 100, min: 0, distance: 1, radialGradient:[{position:0,color:"#000000"},{position:0.5,color:"#ED4853"}] },
+				{ value: 80, degree: 90, max: 100, min: 0,  distance: 0, radialGradient:[{position:0,color:"#000000"},{position:0.5,color:"#FFDD5C"}] },
+				{ value: 90, degree: 120, max: 100, min: 0,  distance: 0, radialGradient:[{position:0,color:"#000000"},{position:0.5,color:"#FF834D"}] },
+				{ value: 100, degree: 150, max: 100, min: 0,  distance: 0, radialGradient:[{position:0,color:"#000000"},{position:0.5,color:"#C4B7DA"}] }
+			],
+			color: "#555555",
+			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
+		}],
+		colorList: ["#A7CC61", "#64A3D8", "#ED4853", "#FFDD5C", "#FF834D", "#C4B7DA", "#AEC18B", "#7D9DB7", "#B46267", "#ECDB9B", "#D19378", "#C2BBCD"]
 	})
 
 

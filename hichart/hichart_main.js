@@ -15,7 +15,9 @@ function hichart(chartType, g, rect, options){
 			fontSize: 10
 		},
 		stick:{
-			size:3
+			size:3,
+			color: '#999999',
+			lineWidth: 1
 		},
         xAxis:{
 			label:{
