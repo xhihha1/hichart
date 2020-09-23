@@ -292,4 +292,42 @@ function sample(){
 		colorList: ["#A7CC61", "#64A3D8", "#ED4853", "#FFDD5C", "#FF834D", "#C4B7DA", "#AEC18B", "#7D9DB7", "#B46267", "#ECDB9B", "#D19378", "#C2BBCD"]
 	})
 
+
+	var testData = [
+        {times: [{"starting_time": 1355752800000, "ending_time": 1355759900000}, {"starting_time": 1355767900000, "ending_time": 1355774400000}]},
+        {times: []},
+        {times: [{"starting_time": 1355759910000, "ending_time": 1355761900000} ]},
+        {times: [{"starting_time": 1355761910000, "ending_time": 1355763910000}]}
+    ];
+
+    var testData1 = [
+        {times: [{"starting_time": 1355762800000, "ending_time": 1355769900000}, {"starting_time": 1355777900000, "ending_time": 1355784400000}]},
+        {times: [{"starting_time": 1355769910000, "ending_time": 1355771900000}, ]},
+        {times: [{"starting_time": 1355771910000, "ending_time": 1355773910000}]}
+	];
+
+	var B = new hichart('TimelineMulti',context4,{x:150,y:300,width:150,height:150}, {
+		series:[
+			{label:"tag1",data:testData},
+			{label:"tag2",data:testData1}
+		]
+	});
+
+	var B = new hichart('TimelineMulti',context4,{x:300,y:300,width:150,height:150}, {
+		timeline:{
+			type:{type:"multiTimeLine"},
+			lineWidth:10
+		},
+		series:[
+			{label:"tag1",data:testData},
+			{label:"tag2",data:testData1}
+		]
+	});
+
+    var B = new hichart('TimelineMulti',context4,{x:450,y:300,width:150,height:150}, {
+		series:[
+			{label:"tag1",data:testData}
+		]
+	});
+
 }

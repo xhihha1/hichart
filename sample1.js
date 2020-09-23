@@ -323,4 +323,47 @@ function sample1(){
 	})
 
 
+
+	var testData = [
+        {times: [{"starting_time": 1355752800000, "ending_time": 1355759900000}, {"starting_time": 1355767900000, "ending_time": 1355774400000}]},
+        {times: []},
+        {times: [{"starting_time": 1355759910000, "ending_time": 1355761900000} ]},
+        {times: [{"starting_time": 1355761910000, "ending_time": 1355763910000}]}
+    ];
+
+    var testData1 = [
+        {times: [{"starting_time": 1355762800000, "ending_time": 1355769900000}, {"starting_time": 1355777900000, "ending_time": 1355784400000}]},
+        {times: [{"starting_time": 1355769910000, "ending_time": 1355771900000}, ]},
+        {times: [{"starting_time": 1355771910000, "ending_time": 1355773910000}]}
+	];
+
+	var canvas15 = document.getElementById("canvas15");
+    var context15 = canvas15.getContext("2d");
+	var B = new hichart('TimelineMulti',context15,canvas15, {
+		series:[
+			{label:"tag1",data:testData},
+			{label:"tag2",data:testData1}
+		]
+	});
+	
+	var canvas16 = document.getElementById("canvas16");
+    var context16 = canvas16.getContext("2d");
+	var B = new hichart('TimelineMulti',context16,canvas16, {
+		timeline:{
+			type:{type:"multiTimeLine"}
+		},
+		series:[
+			{label:"tag1",data:testData},
+			{label:"tag2",data:testData1}
+		]
+	});
+	
+	var canvas17 = document.getElementById("canvas17");
+    var context17 = canvas17.getContext("2d");
+    var B = new hichart('TimelineMulti',context17,canvas17, {
+		series:[
+			{label:"tag1",data:testData}
+		]
+	});
+
 }
