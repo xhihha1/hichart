@@ -342,6 +342,60 @@
 		]
 	})
 
+## Phase Sequence 相序圖 (PhaseSequence)
+
+![PhaseSequence](readme/phaseSequence.jpg)  
+
+    var A = new hichart('PhaseSequence',context14,{x:0,y:0,width:300,height:300},{
+		margin:5,
+		series:[{
+			text:{
+				enable:true
+			},
+			data: [
+				{ value: 50, degree: 0, max: 100, min: 0, distance: 1, radialGradient:[{position:0,color:"#000000"},{position:0.5,color:"#A7CC61"}] },
+				{ value: 60, degree: 30, max: 100, min: 0, distance: 1, radialGradient:[{position:0,color:"#000000"},{position:0.5,color:"#64A3D8"}] },
+				{ value: 70, degree: 60, max: 100, min: 0, distance: 1, radialGradient:[{position:0,color:"#000000"},{position:0.5,color:"#ED4853"}] },
+				{ value: 80, degree: 90, max: 100, min: 0,  distance: 0, radialGradient:[{position:0,color:"#000000"},{position:0.5,color:"#FFDD5C"}] },
+				{ value: 90, degree: 120, max: 100, min: 0,  distance: 0, radialGradient:[{position:0,color:"#000000"},{position:0.5,color:"#FF834D"}] },
+				{ value: 100, degree: 150, max: 100, min: 0,  distance: 0, radialGradient:[{position:0,color:"#000000"},{position:0.5,color:"#C4B7DA"}] }
+			],
+			color: "#555555",
+			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
+		}],
+		colorList: ["#A7CC61", "#64A3D8", "#ED4853", "#FFDD5C", "#FF834D", "#C4B7DA", "#AEC18B", "#7D9DB7", "#B46267", "#ECDB9B", "#D19378", "#C2BBCD"]
+	})
+
+額外屬性  
+
+	{
+        phaseSequence:{
+            degreeStep: 30,
+            startAngle: 0,
+            endAngle: 360,
+            counterclockwise: false,
+            type: {
+                type: "twoLengthTriangleNeedle", //percentNeedle,twoLengthNeedle,twoLengthTriangleNeedle
+                color: "#CCCCCC",
+                secondColor: "#FF0000"
+            },
+            rangeContainer: {
+                offset: 0,
+                backgroundColor: "#64A3D8"
+            },
+            label: {
+                endable: false,
+                type: "textCloud", //marker, textCloud
+                font: {
+                    color: "#808080",
+                    size: 16
+                },
+                background: "rgba(80,80,80,0.8)",
+                customizeText: "function object input value object"
+            }
+        }
+    }
+
 # Options  
 
 共同配置:  

@@ -8,7 +8,7 @@
                 endAngle: 360,
                 counterclockwise: false,
                 type: {
-                    type: "twoLengthNeedle", //percentNeedle,twoLengthNeedle,twoLengthTriangleNeedle
+                    type: "twoLengthTriangleNeedle", //percentNeedle,twoLengthNeedle,twoLengthTriangleNeedle
                     color: "#CCCCCC",
                     secondColor: "#FF0000"
                 },
@@ -103,7 +103,6 @@
                 var value = this.isNumeric(series[s]['data'][d].value) ? series[s]['data'][d].value * 1 : 0;
                 values.push(value);
             }
-            console.log('color', color);
 
             //Background 360 degree arc(outer)
             context.beginPath();

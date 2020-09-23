@@ -196,11 +196,11 @@ function sample1(){
 			categories:["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 		},
 		series:[{
-			data:[10,20,30,40,50,60,15,25,35,45,55,65],
+			data:[10,20,30,40,50,60,45,25,35,45,55,65],
 			color: "#d9406f",
 			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
 		},{
-			data:[10,20,30,40,50,60,15,25,35,45,55,65],
+			data:[10,20,30,40,50,60,15,25,55,45,55,65],
 			color: "#4e94ab",
 			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#edc214"}]
 		}]
