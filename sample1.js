@@ -265,4 +265,40 @@ function sample1(){
 		]
 	})
 
+	
+	var canvas13 = document.getElementById("canvas13");
+    var context13 = canvas13.getContext("2d");
+	/*context2.fillStyle = '#00FF00';
+    context2.fillRect(0,0, canvas2.width,canvas2.height);*/
+    var B = new hichart('BZLine',context13,canvas13, {
+		sections:12,
+		columnSize: 40,
+		rowSize: 40,
+		Val_max:130,
+		Val_min:-40,
+		stepSize:10,
+		xAxis:{
+			label:{
+				enableRotate: true,
+				rotate: 60,
+				textBaseline: 'top',
+				textAlign: 'right'
+			},
+			categories:["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+		},
+		series:[
+			{
+				data:[30, 50, 70, 80, 90, 100, 95, 91, 85, 92, 99, 130],
+				color: "#d9406f",
+				linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
+			},
+			{
+				data:[20, -10, -20, -25, -40, 5, 10, 28, 30, 43, 65, 80],
+				color: "#4e94ab",
+				linearGradient:[{position:0,color:"#000000"},{position:1,color:"#4e94ab"}]
+			}
+		]
+	})
+
+
 }
