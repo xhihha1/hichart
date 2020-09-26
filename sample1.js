@@ -366,4 +366,76 @@ function sample1(){
 		]
 	});
 
+
+	var value = [
+		{ value: 50 },
+		{ value: 80 },
+		{ value: 30 },
+		{ value: 70 },
+		{ value: 60 },
+		{ value: 10 }
+	];
+	  
+	var value1 = [
+		{ value: 63 }
+	];
+
+	var canvas18 = document.getElementById("canvas18");
+    var context18 = canvas18.getContext("2d");
+    var B = new hichart('LinearGauge',context18,canvas18, {
+		Val_max: 100,
+		Val_min: -100,
+		linearGauge:{
+			type: { type: "circle" }, 
+			label: { type: "textCloud"} 
+		},
+		series:[
+			{label:"tag1",data:value1}
+		]
+	});
+
+	var canvas19 = document.getElementById("canvas19");
+    var context19 = canvas19.getContext("2d");
+    var B = new hichart('LinearGauge',context19,canvas19, {
+		Val_max: 100,
+		Val_min: -100,
+		linearGauge:{
+			label: { type: "marker"}
+		},
+		series:[
+			{label:"tag1",data:value}
+		]
+	});
+
+	var canvas20 = document.getElementById("canvas20");
+    var context20 = canvas20.getContext("2d");
+    var B = new hichart('LinearGauge',context20,canvas20, {
+		Val_max: 100,
+		Val_min: -100,
+		linearGauge:{
+			type: { type: "rectangle" }, 
+			label: { type: "textCloud" }, 
+			orientation: "vertical"
+		},
+		series:[
+			{label:"tag1",data:value1}
+		]
+	});
+
+	var canvas21 = document.getElementById("canvas21");
+    var context21 = canvas21.getContext("2d");
+    var B = new hichart('LinearGauge',context21,canvas21, {
+		Val_max: 100,
+		Val_min: -100,
+		linearGauge:{
+			orientation: "vertical", 
+			label: { type: "marker"}
+		},
+		series:[
+			{label:"tag1",data:value}
+		]
+	});
+
+
+
 }

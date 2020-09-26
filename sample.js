@@ -330,4 +330,115 @@ function sample(){
 		]
 	});
 
+
+	var value = [
+		{ value: 50 },
+		{ value: 80 },
+		{ value: 30 },
+		{ value: 70 },
+		{ value: 60 },
+		{ value: 10 }
+	];
+	  
+	var value1 = [
+		{ value: 63 }
+	];
+
+	var canvas18 = document.getElementById("canvas18");
+    var context18 = canvas18.getContext("2d");
+    var B = new hichart('LinearGauge',context4,{x:600,y:300,width:150,height:150}, {
+		Val_max: 100,
+		Val_min: -100,
+		linearGauge:{
+			bar:{
+                padding: 5
+			},
+			lineWidth:5,
+			font: {
+                size: 10
+            },
+			type: { type: "circle" }, 
+			label: { 
+				type: "textCloud",
+				font:{
+					size: 10,
+				},
+				padding: 5
+			} 
+		},
+		series:[
+			{label:"tag1",data:value1}
+		]
+	});
+
+	var canvas19 = document.getElementById("canvas19");
+    var context19 = canvas19.getContext("2d");
+    var B = new hichart('LinearGauge',context4,{x:750,y:300,width:150,height:150}, {
+		Val_max: 100,
+		Val_min: -100,
+		linearGauge:{
+			bar:{
+                padding: 5
+			},
+			lineWidth:5,
+			font: {
+                size: 10
+            },
+			label: { type: "marker"}
+		},
+		series:[
+			{label:"tag1",data:value}
+		]
+	});
+
+	var canvas20 = document.getElementById("canvas20");
+    var context20 = canvas20.getContext("2d");
+    var B = new hichart('LinearGauge',context4,{x:0,y:450,width:150,height:150}, {
+		Val_max: 100,
+		Val_min: -100,
+		linearGauge:{
+			bar:{
+                padding: 5
+			},
+			lineWidth:5,
+			font: {
+                size: 10
+            },
+			type: { type: "rectangle" }, 
+			label: { 
+				type: "textCloud",
+				font:{
+					size: 10,
+				},
+				padding: 5
+			}, 
+			orientation: "vertical"
+		},
+		series:[
+			{label:"tag1",data:value1}
+		]
+	});
+
+	var canvas21 = document.getElementById("canvas21");
+    var context21 = canvas21.getContext("2d");
+    var B = new hichart('LinearGauge',context4,{x:150,y:450,width:150,height:150}, {
+		Val_max: 100,
+		Val_min: -100,
+		linearGauge:{
+			bar:{
+                padding: 5
+			},
+			lineWidth:5,
+			font: {
+                size: 10
+            },
+			orientation: "vertical", 
+			label: { type: "marker"}
+		},
+		series:[
+			{label:"tag1",data:value}
+		]
+	});
+
+
 }

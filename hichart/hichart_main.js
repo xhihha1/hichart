@@ -1,5 +1,8 @@
 
 function hichart(chartType, g, rect, options){
+	if(!g || !rect){
+		return this;
+	}
 	this.context = g;
 	this.chartType = chartType;
 	this.rect = rect;
@@ -52,12 +55,14 @@ function hichart(chartType, g, rect, options){
 				color: "#4e94ab"
 			}
 		],
-        colorList:['#edc214', '#d9406f', '#4e94ab', '#5bd1d7','#348498','#004d61','#ff502f'] 
+        colorList:['#edc214', '#d9406f', '#4e94ab', '#5bd1d7','#348498','#004d61','#ff502f', "#A7CC61", "#64A3D8", "#ED4853", "#FFDD5C", "#FF834D", "#C4B7DA", "#AEC18B", "#7D9DB7", "#B46267", "#ECDB9B", "#D19378", "#C2BBCD"] 
     }
 	//this.options = Object.assign({}, this.options, options);
 	
-	this.options = this.mergeDeep(this.options, options);
-	this.options = this.mergeSeriesData(this.options, options);
+	if(options){
+		this.options = this.mergeDeep(this.options, options);
+		this.options = this.mergeSeriesData(this.options, options);
+	}
 	
     this.context.font = "19 pt Arial;"
 	if(!this.context){
