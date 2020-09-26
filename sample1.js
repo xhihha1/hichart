@@ -436,6 +436,26 @@ function sample1(){
 		]
 	});
 
+	var canvas22 = document.getElementById("canvas22");
+    var context22= canvas22.getContext("2d");
+    var A = new hichart('DoughnutPie',context22,{x:0,y:0,width:300,height:300},{
+		margin:5,
+		series:[{
+			text:{
+				enable:true
+			},
+			data: [
+                {value: 335, name: '直接访问', radialGradient:[{position:0,color:"#000000"},{position:1,color:"#ECDB9B"}]},
+                {value: 310, name: '邮件营销', linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]},
+                {value: 234, name: '联盟广告', radialGradient:[{position:0,color:"#000000"},{position:1,color:"#64A3D8"}]},
+                {value: 135, name: '视频广告', radialGradient:[{position:0,color:"#000000"},{position:1,color:"#D19378"}]},
+                {value: 248, name: '搜索引擎', radialGradient:[{position:0,color:"#000000"},{position:1,color:"#C2BBCD"}]}
+            ],
+			color: "#555555",
+			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
+		}]
+	})
+
 
 
 }

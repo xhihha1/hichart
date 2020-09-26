@@ -259,6 +259,30 @@
 		}]
 	})
 
+
+## Doughnut 
+
+![DoughnutPie](readme/doughnutPie.jpg)  
+
+
+	var A = new hichart('DoughnutPie',context7,{x:0,y:0,width:300,height:300},{
+		margin:5,
+		series:[{
+			text:{
+				enable:true
+			},
+			data: [
+                {value: 335, name: '直接访问', radialGradient:[{position:0,color:"#000000"},{position:1,color:"#ECDB9B"}]},
+                {value: 310, name: '邮件营销', linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]},
+                {value: 234, name: '联盟广告', radialGradient:[{position:0,color:"#000000"},{position:1,color:"#64A3D8"}]},
+                {value: 135, name: '视频广告', radialGradient:[{position:0,color:"#000000"},{position:1,color:"#D19378"}]},
+                {value: 248, name: '搜索引擎', radialGradient:[{position:0,color:"#000000"},{position:1,color:"#C2BBCD"}]}
+            ],
+			color: "#555555",
+			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
+		}]
+	})
+
 ## Polar  
 
 ![polar](readme/polar.jpg)  
@@ -440,9 +464,141 @@
 
 ![TimelineMulti](readme/timeline3.jpg)  
 
+
     var B = new hichart('TimelineMulti',context4,{x:450,y:300,width:150,height:150}, {
 		series:[
 			{label:"tag1",data:testData}
+		]
+	});
+
+
+
+## Linear Guage (LinearGauge)
+
+測試資料:   
+
+	var value = [
+		{ value: 50 },
+		{ value: 80 },
+		{ value: 30 },
+		{ value: 70 },
+		{ value: 60 },
+		{ value: 10 }
+	];
+	  
+	var value1 = [
+		{ value: 63 }
+	];
+
+
+![LinearGauge](readme/linearGuage1.jpg)  
+
+
+	var canvas18 = document.getElementById("canvas18");
+    var context18 = canvas18.getContext("2d");
+    var B = new hichart('LinearGauge',context4,{x:600,y:300,width:150,height:150}, {
+		Val_max: 100,
+		Val_min: -100,
+		linearGauge:{
+			bar:{
+                padding: 5
+			},
+			lineWidth:5,
+			font: {
+                size: 10
+            },
+			type: { type: "circle" }, 
+			label: { 
+				type: "textCloud",
+				font:{
+					size: 10,
+				},
+				padding: 5
+			} 
+		},
+		series:[
+			{label:"tag1",data:value1}
+		]
+	});
+
+
+![LinearGauge](readme/linearGuage2.jpg)  
+
+
+	var canvas19 = document.getElementById("canvas19");
+    var context19 = canvas19.getContext("2d");
+    var B = new hichart('LinearGauge',context4,{x:750,y:300,width:150,height:150}, {
+		Val_max: 100,
+		Val_min: -100,
+		linearGauge:{
+			bar:{
+                padding: 5
+			},
+			lineWidth:5,
+			font: {
+                size: 10
+            },
+			label: { type: "marker"}
+		},
+		series:[
+			{label:"tag1",data:value}
+		]
+	});
+
+
+![LinearGauge](readme/linearGuage3.jpg)  
+
+
+	var canvas20 = document.getElementById("canvas20");
+    var context20 = canvas20.getContext("2d");
+    var B = new hichart('LinearGauge',context4,{x:0,y:450,width:150,height:150}, {
+		Val_max: 100,
+		Val_min: -100,
+		linearGauge:{
+			bar:{
+                padding: 5
+			},
+			lineWidth:5,
+			font: {
+                size: 10
+            },
+			type: { type: "rectangle" }, 
+			label: { 
+				type: "textCloud",
+				font:{
+					size: 10,
+				},
+				padding: 5
+			}, 
+			orientation: "vertical"
+		},
+		series:[
+			{label:"tag1",data:value1}
+		]
+	});
+
+
+![LinearGauge](readme/linearGuage4.jpg)  
+
+
+	var canvas21 = document.getElementById("canvas21");
+    var context21 = canvas21.getContext("2d");
+    var B = new hichart('LinearGauge',context4,{x:150,y:450,width:150,height:150}, {
+		Val_max: 100,
+		Val_min: -100,
+		linearGauge:{
+			bar:{
+                padding: 5
+			},
+			lineWidth:5,
+			font: {
+                size: 10
+            },
+			orientation: "vertical", 
+			label: { type: "marker"}
+		},
+		series:[
+			{label:"tag1",data:value}
 		]
 	});
 

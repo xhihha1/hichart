@@ -344,8 +344,7 @@ function sample(){
 		{ value: 63 }
 	];
 
-	var canvas18 = document.getElementById("canvas18");
-    var context18 = canvas18.getContext("2d");
+
     var B = new hichart('LinearGauge',context4,{x:600,y:300,width:150,height:150}, {
 		Val_max: 100,
 		Val_min: -100,
@@ -371,8 +370,7 @@ function sample(){
 		]
 	});
 
-	var canvas19 = document.getElementById("canvas19");
-    var context19 = canvas19.getContext("2d");
+
     var B = new hichart('LinearGauge',context4,{x:750,y:300,width:150,height:150}, {
 		Val_max: 100,
 		Val_min: -100,
@@ -391,8 +389,7 @@ function sample(){
 		]
 	});
 
-	var canvas20 = document.getElementById("canvas20");
-    var context20 = canvas20.getContext("2d");
+
     var B = new hichart('LinearGauge',context4,{x:0,y:450,width:150,height:150}, {
 		Val_max: 100,
 		Val_min: -100,
@@ -419,8 +416,7 @@ function sample(){
 		]
 	});
 
-	var canvas21 = document.getElementById("canvas21");
-    var context21 = canvas21.getContext("2d");
+
     var B = new hichart('LinearGauge',context4,{x:150,y:450,width:150,height:150}, {
 		Val_max: 100,
 		Val_min: -100,
@@ -439,6 +435,25 @@ function sample(){
 			{label:"tag1",data:value}
 		]
 	});
+
+
+	var A = new hichart('DoughnutPie',context4,{x:300,y:450,width:150,height:150},{
+		margin:5,
+		series:[{
+			text:{
+				enable:true
+			},
+			data: [
+                {value: 335, name: '直接访问', radialGradient:[{position:0,color:"#000000"},{position:1,color:"#ECDB9B"}]},
+                {value: 310, name: '邮件营销', linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]},
+                {value: 234, name: '联盟广告', radialGradient:[{position:0,color:"#000000"},{position:1,color:"#64A3D8"}]},
+                {value: 135, name: '视频广告', radialGradient:[{position:0,color:"#000000"},{position:1,color:"#D19378"}]},
+                {value: 248, name: '搜索引擎', radialGradient:[{position:0,color:"#000000"},{position:1,color:"#C2BBCD"}]}
+            ],
+			color: "#555555",
+			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
+		}]
+	})
 
 
 }
