@@ -455,5 +455,233 @@ function sample(){
 		}]
 	})
 
+	var option23 = {
+		lineWidth: 5,
+		max : 1000,
+		min : 0,
+		color : "#808080",
+		tick : {
+			tickInterval : 100
+		},
+		type : {
+			type : "rangeBar"
+		},
+		font: {
+			size: 5
+		},
+		label:{
+			endable:false,
+			font: {
+				size: 10
+			},
+			padding: 5
+		},
+		rangeContainer : {
+			ranges : [{
+				"startValue" : 100,
+				"endValue" : 200,
+				"color" : "#A7CC61"
+			}, {
+				"startValue" : 400,
+				"endValue" : 600,
+				"color" : "#ED4853"
+			}]
+		},
+		bgcolor : "#222",
+		startAngle : 0,
+		endAngle : 360,
+		counterclockwise : false
+	};
 
-}
+	var value = [{
+		color : "lightgreen",
+		value : 500
+	}, {
+		color : "lightblue",
+		value : 700
+	}, {
+		color : "red",
+		value : 300
+	}];
+
+
+    var A = new hichart('Gauge',context4,{x:450,y:450,width:150,height:150},{
+		gauge: option23,
+		Val_max: 1000,
+		Val_min: 0,
+		margin:5,
+		series:[{
+			text:{
+				enable:true
+			},
+			data: value,
+			color: "#555555",
+			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
+		}]
+	})
+
+	var value1 = [{
+		value : 50
+	}];
+
+	//var value = {value:50};
+	var option2 = {
+		max : 1000,
+		min : 0,
+		color : "#808080",
+		tick : {
+			tickInterval : 100
+		},
+		type : {
+			type : "twoColorNeedle"
+		},
+		font: {
+			size: 5
+		},
+		label:{
+			font: {
+				size: 10
+			},
+			padding: 5
+		},
+		rangeContainer : {
+			ranges : [{
+				"startValue" : 100,
+				"endValue" : 200,
+				"color" : "#A7CC61"
+			}, {
+				"startValue" : 400,
+				"endValue" : 600,
+				"color" : "#ED4853"
+			}]
+		},
+		bgcolor : "#222",
+		startAngle : 180,
+		endAngle : 270,
+		counterclockwise : false
+	};
+	var option3 = {
+		max : 1000,
+		min : 0,
+		color : "#808080",
+		tick : {
+			tickInterval : 100
+		},
+		type : {
+			type : "rectangleNeedle"
+		},
+		font: {
+			size: 5
+		},
+		label:{
+			font: {
+				size: 10
+			},
+			padding: 5
+		},
+		rangeContainer : {
+			ranges : [{
+				"startValue" : 100,
+				"endValue" : 200,
+				"color" : "#A7CC61"
+			}, {
+				"startValue" : 400,
+				"endValue" : 600,
+				"color" : "#ED4853"
+			}]
+		},
+		bgcolor : "#222",
+		startAngle : 90,
+		endAngle : 180,
+		counterclockwise : false
+	};
+	var option4 = {
+		max : 1000,
+		min : 0,
+		color : "#808080",
+		tick : {
+			tickInterval : 100
+		},
+		type : {
+			type : "triangleNeedle"
+		},
+		font: {
+			size: 5
+		},
+		label:{
+			font: {
+				size: 10
+			},
+			padding: 5
+		},
+		rangeContainer : {
+			ranges : [{
+				"startValue" : 100,
+				"endValue" : 200,
+				"color" : "#A7CC61"
+			}, {
+				"startValue" : 400,
+				"endValue" : 600,
+				"color" : "#ED4853"
+			}]
+		},
+		bgcolor : "#222",
+		startAngle : 0,
+		endAngle : 90,
+		counterclockwise : false
+	};
+
+
+	var canvas24 = document.getElementById("canvas24");
+    var context24= canvas24.getContext("2d");
+    var A = new hichart('Gauge',context4,{x:600,y:450,width:150,height:150},{
+		gauge: option2,
+		Val_max: 1000,
+		Val_min: 0,
+		margin:5,
+		series:[{
+			text:{
+				enable:true
+			},
+			data: value1,
+			color: "#555555",
+			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
+		}]
+	})
+
+	var canvas25 = document.getElementById("canvas25");
+    var context25= canvas25.getContext("2d");
+    var A = new hichart('Gauge',context4,{x:750,y:450,width:150,height:150},{
+		gauge: option3,
+		Val_max: 1000,
+		Val_min: 0,
+		margin:5,
+		series:[{
+			text:{
+				enable:true
+			},
+			data: value1,
+			color: "#555555",
+			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
+		}]
+	})
+
+	var canvas26 = document.getElementById("canvas26");
+    var context26= canvas26.getContext("2d");
+    var A = new hichart('Gauge',context4,{x:0,y:600,width:150,height:150},{
+		gauge: option4,
+		Val_max: 1000,
+		Val_min: 0,
+		margin:5,
+		series:[{
+			text:{
+				enable:true
+			},
+			data: value1,
+			color: "#555555",
+			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
+		}]
+	})
+
+
+}// end

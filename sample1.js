@@ -456,6 +456,199 @@ function sample1(){
 		}]
 	})
 
+	var option23 = {
+		lineWidth: 5,
+		max : 1000,
+		min : 0,
+		color : "#808080",
+		tick : {
+			enable:true,
+			tickInterval : 100
+		},
+		type : {
+			type : "rangeBar"
+		},
+		rangeContainer : {
+			ranges : [{
+				"startValue" : 100,
+				"endValue" : 200,
+				"color" : "#A7CC61"
+			}, {
+				"startValue" : 400,
+				"endValue" : 600,
+				"color" : "#ED4853"
+			}]
+		},
+		bgcolor : "#222",
+		startAngle : 0,
+		endAngle : 360,
+		counterclockwise : false
+	};
+
+	var value = [{
+		color : "lightgreen",
+		value : 500
+	}, {
+		color : "lightblue",
+		value : 850
+	}, {
+		color : "red",
+		value : 150
+	}];
+
+	var canvas23 = document.getElementById("canvas23");
+    var context23= canvas23.getContext("2d");
+    var A = new hichart('Gauge',context23,{x:0,y:0,width:300,height:300},{
+		gauge: option23,
+		Val_max: 1000,
+		Val_min: 0,
+		margin:5,
+		series:[{
+			text:{
+				enable:true
+			},
+			data: value,
+			color: "#555555",
+			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
+		}]
+	})
+
+	var value1 = [{
+		value : 500
+	}];
+
+	//var value = {value:50};
+	var option2 = {
+		max : 1000,
+		min : 0,
+		color : "#808080",
+		tick : {
+			tickInterval : 100
+		},
+		type : {
+			type : "twoColorNeedle"
+		},
+		rangeContainer : {
+			ranges : [{
+				"startValue" : 100,
+				"endValue" : 200,
+				"color" : "#A7CC61"
+			}, {
+				"startValue" : 400,
+				"endValue" : 600,
+				"color" : "#ED4853"
+			}]
+		},
+		bgcolor : "#222",
+		startAngle : 180,
+		endAngle : 270,
+		counterclockwise : false
+	};
+	var option3 = {
+		max : 1000,
+		min : 0,
+		color : "#808080",
+		tick : {
+			tickInterval : 100
+		},
+		type : {
+			type : "rectangleNeedle"
+		},
+		rangeContainer : {
+			ranges : [{
+				"startValue" : 100,
+				"endValue" : 200,
+				"color" : "#A7CC61"
+			}, {
+				"startValue" : 400,
+				"endValue" : 600,
+				"color" : "#ED4853"
+			}]
+		},
+		bgcolor : "#222",
+		startAngle : 90,
+		endAngle : 180,
+		counterclockwise : false
+	};
+	var option4 = {
+		max : 1000,
+		min : 0,
+		color : "#808080",
+		tick : {
+			tickInterval : 100
+		},
+		type : {
+			type : "triangleNeedle"
+		},
+		rangeContainer : {
+			ranges : [{
+				"startValue" : 100,
+				"endValue" : 200,
+				"color" : "#A7CC61"
+			}, {
+				"startValue" : 400,
+				"endValue" : 600,
+				"color" : "#ED4853"
+			}]
+		},
+		bgcolor : "#222",
+		startAngle : 0,
+		endAngle : 90,
+		counterclockwise : false
+	};
+
+
+	var canvas24 = document.getElementById("canvas24");
+    var context24= canvas24.getContext("2d");
+    var A = new hichart('Gauge',context24,{x:0,y:0,width:300,height:300},{
+		gauge: option2,
+		Val_max: 1000,
+		Val_min: 0,
+		margin:5,
+		series:[{
+			text:{
+				enable:true
+			},
+			data: value1,
+			color: "#555555",
+			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
+		}]
+	})
+
+	var canvas25 = document.getElementById("canvas25");
+    var context25= canvas25.getContext("2d");
+    var A = new hichart('Gauge',context25,{x:0,y:0,width:300,height:300},{
+		gauge: option3,
+		Val_max: 1000,
+		Val_min: 0,
+		margin:5,
+		series:[{
+			text:{
+				enable:true
+			},
+			data: value1,
+			color: "#555555",
+			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
+		}]
+	})
+
+	var canvas26 = document.getElementById("canvas26");
+    var context26= canvas26.getContext("2d");
+    var A = new hichart('Gauge',context26,{x:0,y:0,width:300,height:300},{
+		gauge: option4,
+		Val_max: 1000,
+		Val_min: 0,
+		margin:5,
+		series:[{
+			text:{
+				enable:true
+			},
+			data: value1,
+			color: "#555555",
+			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
+		}]
+	})
+
 
 
 }

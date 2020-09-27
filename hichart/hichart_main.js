@@ -89,7 +89,7 @@ function hichart(chartType, g, rect, options){
 	if(this.chartType && typeof this['plot'+this.chartType+'Data'] === 'function') {
 		this['plot'+this.chartType+'Data']();
 	} else {
-		console.error(chartType + 'not exist');
+		console.error(chartType + ' not exist');
 	}
 	
 	return this;

@@ -473,7 +473,7 @@
 
 
 
-## Linear Guage (LinearGauge)
+## Linear Gauge (LinearGauge)
 
 測試資料:   
 
@@ -491,7 +491,7 @@
 	];
 
 
-![LinearGauge](readme/linearGuage1.jpg)  
+![LinearGauge](readme/linearGauge1.jpg)  
 
 
 	var canvas18 = document.getElementById("canvas18");
@@ -522,7 +522,7 @@
 	});
 
 
-![LinearGauge](readme/linearGuage2.jpg)  
+![LinearGauge](readme/linearGauge2.jpg)  
 
 
 	var canvas19 = document.getElementById("canvas19");
@@ -546,7 +546,7 @@
 	});
 
 
-![LinearGauge](readme/linearGuage3.jpg)  
+![LinearGauge](readme/linearGauge3.jpg)  
 
 
 	var canvas20 = document.getElementById("canvas20");
@@ -578,7 +578,7 @@
 	});
 
 
-![LinearGauge](readme/linearGuage4.jpg)  
+![LinearGauge](readme/linearGauge4.jpg)  
 
 
 	var canvas21 = document.getElementById("canvas21");
@@ -601,6 +601,16 @@
 			{label:"tag1",data:value}
 		]
 	});
+
+## Gauge (Gauge)
+
+![Gauge](readme/gauge1.jpg)  
+
+![Gauge](readme/gauge2.jpg)  
+
+![Gauge](readme/gauge3.jpg)  
+
+![Gauge](readme/gauge4.jpg)  
 
 
 # Options  
