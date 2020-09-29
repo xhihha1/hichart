@@ -330,4 +330,358 @@ function sample(){
 		]
 	});
 
-}
+
+	var value = [
+		{ value: 50 },
+		{ value: 80 },
+		{ value: 30 },
+		{ value: 70 },
+		{ value: 60 },
+		{ value: 10 }
+	];
+	  
+	var value1 = [
+		{ value: 63 }
+	];
+
+
+    var B = new hichart('LinearGauge',context4,{x:600,y:300,width:150,height:150}, {
+		Val_max: 100,
+		Val_min: -100,
+		linearGauge:{
+			bar:{
+                padding: 5
+			},
+			lineWidth:5,
+			font: {
+                size: 10
+            },
+			type: { type: "circle" }, 
+			label: { 
+				type: "textCloud",
+				font:{
+					size: 10,
+				},
+				padding: 5
+			} 
+		},
+		series:[
+			{label:"tag1",data:value1}
+		]
+	});
+
+
+    var B = new hichart('LinearGauge',context4,{x:750,y:300,width:150,height:150}, {
+		Val_max: 100,
+		Val_min: -100,
+		linearGauge:{
+			bar:{
+                padding: 5
+			},
+			lineWidth:5,
+			font: {
+                size: 10
+            },
+			label: { type: "marker"}
+		},
+		series:[
+			{label:"tag1",data:value}
+		]
+	});
+
+
+    var B = new hichart('LinearGauge',context4,{x:0,y:450,width:150,height:150}, {
+		Val_max: 100,
+		Val_min: -100,
+		linearGauge:{
+			bar:{
+                padding: 5
+			},
+			lineWidth:5,
+			font: {
+                size: 10
+            },
+			type: { type: "rectangle" }, 
+			label: { 
+				type: "textCloud",
+				font:{
+					size: 10,
+				},
+				padding: 5
+			}, 
+			orientation: "vertical"
+		},
+		series:[
+			{label:"tag1",data:value1}
+		]
+	});
+
+
+    var B = new hichart('LinearGauge',context4,{x:150,y:450,width:150,height:150}, {
+		Val_max: 100,
+		Val_min: -100,
+		linearGauge:{
+			bar:{
+                padding: 5
+			},
+			lineWidth:5,
+			font: {
+                size: 10
+            },
+			orientation: "vertical", 
+			label: { type: "marker"}
+		},
+		series:[
+			{label:"tag1",data:value}
+		]
+	});
+
+
+	var A = new hichart('DoughnutPie',context4,{x:300,y:450,width:150,height:150},{
+		margin:5,
+		series:[{
+			text:{
+				enable:true
+			},
+			data: [
+                {value: 335, name: '直接访问', radialGradient:[{position:0,color:"#000000"},{position:1,color:"#ECDB9B"}]},
+                {value: 310, name: '邮件营销', linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]},
+                {value: 234, name: '联盟广告', radialGradient:[{position:0,color:"#000000"},{position:1,color:"#64A3D8"}]},
+                {value: 135, name: '视频广告', radialGradient:[{position:0,color:"#000000"},{position:1,color:"#D19378"}]},
+                {value: 248, name: '搜索引擎', radialGradient:[{position:0,color:"#000000"},{position:1,color:"#C2BBCD"}]}
+            ],
+			color: "#555555",
+			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
+		}]
+	})
+
+	var option23 = {
+		lineWidth: 5,
+		max : 1000,
+		min : 0,
+		color : "#808080",
+		tick : {
+			tickInterval : 100
+		},
+		type : {
+			type : "rangeBar"
+		},
+		font: {
+			size: 5
+		},
+		label:{
+			endable:false,
+			font: {
+				size: 10
+			},
+			padding: 5
+		},
+		rangeContainer : {
+			ranges : [{
+				"startValue" : 100,
+				"endValue" : 200,
+				"color" : "#A7CC61"
+			}, {
+				"startValue" : 400,
+				"endValue" : 600,
+				"color" : "#ED4853"
+			}]
+		},
+		bgcolor : "#222",
+		startAngle : 0,
+		endAngle : 360,
+		counterclockwise : false
+	};
+
+	var value = [{
+		color : "lightgreen",
+		value : 500
+	}, {
+		color : "lightblue",
+		value : 700
+	}, {
+		color : "red",
+		value : 300
+	}];
+
+
+    var A = new hichart('Gauge',context4,{x:450,y:450,width:150,height:150},{
+		gauge: option23,
+		Val_max: 1000,
+		Val_min: 0,
+		margin:5,
+		series:[{
+			text:{
+				enable:true
+			},
+			data: value,
+			color: "#555555",
+			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
+		}]
+	})
+
+	var value1 = [{
+		value : 50
+	}];
+
+	//var value = {value:50};
+	var option2 = {
+		max : 1000,
+		min : 0,
+		color : "#808080",
+		tick : {
+			tickInterval : 100
+		},
+		type : {
+			type : "twoColorNeedle"
+		},
+		font: {
+			size: 5
+		},
+		label:{
+			font: {
+				size: 10
+			},
+			padding: 5
+		},
+		rangeContainer : {
+			ranges : [{
+				"startValue" : 100,
+				"endValue" : 200,
+				"color" : "#A7CC61"
+			}, {
+				"startValue" : 400,
+				"endValue" : 600,
+				"color" : "#ED4853"
+			}]
+		},
+		bgcolor : "#222",
+		startAngle : 180,
+		endAngle : 270,
+		counterclockwise : false
+	};
+	var option3 = {
+		max : 1000,
+		min : 0,
+		color : "#808080",
+		tick : {
+			tickInterval : 100
+		},
+		type : {
+			type : "rectangleNeedle"
+		},
+		font: {
+			size: 5
+		},
+		label:{
+			font: {
+				size: 10
+			},
+			padding: 5
+		},
+		rangeContainer : {
+			ranges : [{
+				"startValue" : 100,
+				"endValue" : 200,
+				"color" : "#A7CC61"
+			}, {
+				"startValue" : 400,
+				"endValue" : 600,
+				"color" : "#ED4853"
+			}]
+		},
+		bgcolor : "#222",
+		startAngle : 90,
+		endAngle : 180,
+		counterclockwise : false
+	};
+	var option4 = {
+		max : 1000,
+		min : 0,
+		color : "#808080",
+		tick : {
+			tickInterval : 100
+		},
+		type : {
+			type : "triangleNeedle"
+		},
+		font: {
+			size: 5
+		},
+		label:{
+			font: {
+				size: 10
+			},
+			padding: 5
+		},
+		rangeContainer : {
+			ranges : [{
+				"startValue" : 100,
+				"endValue" : 200,
+				"color" : "#A7CC61"
+			}, {
+				"startValue" : 400,
+				"endValue" : 600,
+				"color" : "#ED4853"
+			}]
+		},
+		bgcolor : "#222",
+		startAngle : 0,
+		endAngle : 90,
+		counterclockwise : false
+	};
+
+
+	var canvas24 = document.getElementById("canvas24");
+    var context24= canvas24.getContext("2d");
+    var A = new hichart('Gauge',context4,{x:600,y:450,width:150,height:150},{
+		gauge: option2,
+		Val_max: 1000,
+		Val_min: 0,
+		margin:5,
+		series:[{
+			text:{
+				enable:true
+			},
+			data: value1,
+			color: "#555555",
+			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
+		}]
+	})
+
+	var canvas25 = document.getElementById("canvas25");
+    var context25= canvas25.getContext("2d");
+    var A = new hichart('Gauge',context4,{x:750,y:450,width:150,height:150},{
+		gauge: option3,
+		Val_max: 1000,
+		Val_min: 0,
+		margin:5,
+		series:[{
+			text:{
+				enable:true
+			},
+			data: value1,
+			color: "#555555",
+			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
+		}]
+	})
+
+	var canvas26 = document.getElementById("canvas26");
+    var context26= canvas26.getContext("2d");
+    var A = new hichart('Gauge',context4,{x:0,y:600,width:150,height:150},{
+		gauge: option4,
+		Val_max: 1000,
+		Val_min: 0,
+		margin:5,
+		series:[{
+			text:{
+				enable:true
+			},
+			data: value1,
+			color: "#555555",
+			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
+		}]
+	})
+
+
+}// end
