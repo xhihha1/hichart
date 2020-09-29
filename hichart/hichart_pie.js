@@ -126,7 +126,11 @@ hichart.prototype.plotPieData = function (dataSet) {
     context.font = font;
     var textWidth = context.measureText(fontText).width;
     var textHeight = fontSize ? fontSize / 4 : 0;
-    context.fillText(fontText, centerX - textWidth / 2, centerY + textHeight);
+    context.textAlign = "center";
+    context.textBaseline = "middle";
+    context.fillText(fontText, centerX, centerY);
+    context.textBaseline = "alphabetic";
+    context.textAlign = "start";
     //----------------------
 
 
