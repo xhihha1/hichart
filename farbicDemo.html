@@ -1,34 +1,60 @@
 <html>
 <head>
 	<title>Bar Graph</title>
-<style>#canvas{background: #ffffff;
+<style>
+#canvas{background: #ffffff;
         box-shadow:5px 5px 5px #ccc;
 		border:5px solid #eee;
-        margin-bottom:10px;}</style>
+        margin-bottom:10px;}
+
+#threeDim {
+    background-color: #000;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    margin: 100px;
+    padding: 0px;
+    position: relative; /* fixed or static */
+    top: 100px;
+    left: 100px;
+}
+</style>
         
         <script src="hichart/hiChart_main.js"></script>
-        <script src="hichart/hichart_calculate.js"></script>
-        <script src="hichart/hiChart_bar.js"></script>
-        <script src="hichart/hiChart_stackedBar.js"></script>
-        <script src="hichart/hiChart_line.js"></script>
-        <script src="hichart/hiChart_pie.js"></script>
-        <script src="hichart/hiChart_polar.js"></script>
-        <script src="hichart/hiChart_basicPie.js"></script>
-        <script src="hichart/hiChart_area.js"></script>
-        <script src="hichart/hiChart_stackedArea.js"></script>
-        <script src="hichart/hichart_radar.js"></script>
+<script src="hichart/hichart_axis.js"></script>
+<script src="hichart/hichart_calculate.js"></script>
+<script src="hichart/hiChart_bar.js"></script>
+<script src="hichart/hiChart_stackedBar.js"></script>
+<script src="hichart/hiChart_line.js"></script>
+<script src="hichart/hiChart_pie.js"></script>
+<script src="hichart/hiChart_polar.js"></script>
+<script src="hichart/hiChart_basicPie.js"></script>
+<script src="hichart/hiChart_area.js"></script>
+<script src="hichart/hiChart_stackedArea.js"></script>
+<script src="hichart/hichart_radar.js"></script>
+<script src="hichart/hiChart_bzLine.js"></script>
+<script src="hichart/hichart_phaseSequence.js"></script>
+<script src="hichart/hichart_timeline.js"></script>
+<script src="hichart/hichart_timelineMulti.js"></script>
+<script src="hichart/hichart_linearGauge.js"></script>
+<script src="hichart/hichart_doughnutPie.js"></script>
+<script src="hichart/hichart_gauge.js"></script>
 
         <script src="js/fabric.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r120/three.min.js"></script>
+		
     </head>
 <body>
     <canvas id="canvas" width='800' height='800'></canvas>
-
+	<div id="threeDim"></div>
 </body>
 
 <script type="text/javascript">
 var canvas = new fabric.Canvas('canvas', {
-  height: window.innerHeight - 50, // 讓畫布同視窗大小
-  width: window.innerWidth - 50, // 讓畫布同視窗大小
+  // height: window.innerHeight - 50, // 讓畫布同視窗大小
+  // width: window.innerWidth - 50, // 讓畫布同視窗大小
+  height: 500, // 讓畫布同視窗大小
+  width: 500, // 讓畫布同視窗大小
   isDrawingMode: false, // 設置成 true 一秒變身小畫家
   hoverCursor: 'progress', // 移動時鼠標顯示
   freeDrawingCursor: 'all-scroll', // 畫畫模式時鼠標模式
@@ -43,11 +69,21 @@ const circle = new fabric.Circle({
 })
 canvas.add(circle)//加入到canvas中
 
+const rect = new fabric.Rect({
+  top: 10,
+  left: 10,
+  width: 100,
+  height: 100,
+  fill: 'rgba(51,51,51,1)'
+})
+canvas.add(rect)//加入到canvas中
 
 const MyBar = new fabric.util.createClass(fabric.Rect, {
-  initialize (height, width) {
-    this.height = height || 100
-    this.width = width || 100
+  initialize (options) {
+	// 使用原方法匯入屬性
+    this.callSuper('initialize', options)
+    // this.height = height || 100
+    // this.width = width || 100
   },
   getArea () {
     return this.height * this.width
@@ -62,14 +98,21 @@ const MyBar = new fabric.util.createClass(fabric.Rect, {
 	})
   }
 })
-var bar = new MyBar(200, 200)
+var bar = new MyBar({
+  top: 100,
+  left: 10,
+  width: 100,
+  height: 100
+})
 canvas.add(bar)
 
 
 const MyLine = new fabric.util.createClass(fabric.Rect, {
-  initialize (height, width) {
-    this.height = height || 100
-    this.width = width || 100
+  initialize (options) {
+	// 使用原方法匯入屬性
+    this.callSuper('initialize', options)
+    // this.height = height || 100
+    // this.width = width || 100
   },
   getArea () {
     return this.height * this.width
@@ -88,14 +131,21 @@ const MyLine = new fabric.util.createClass(fabric.Rect, {
 	})
   }
 })
-var line = new MyLine(200, 200)
+var line = new MyLine({
+  top: 100,
+  left: 10,
+  width: 100,
+  height: 100
+})
 canvas.add(line)
 
 
 const MyArea = new fabric.util.createClass(fabric.Rect, {
-  initialize (height, width) {
-    this.height = height || 100
-    this.width = width || 100
+  initialize (options) {
+	// 使用原方法匯入屬性
+    this.callSuper('initialize', options)
+    // this.height = height || 100
+    // this.width = width || 100
   },
   getArea () {
     return this.height * this.width
@@ -121,15 +171,22 @@ const MyArea = new fabric.util.createClass(fabric.Rect, {
 	})
   }
 })
-var area = new MyArea(200, 200)
+var area = new MyArea({
+  top: 100,
+  left: 10,
+  width: 100,
+  height: 100
+})
 canvas.add(area)
 
 
 
 const MyPie = new fabric.util.createClass(fabric.Rect, {
-  initialize (height, width) {
-    this.height = height || 100
-    this.width = width || 100
+  initialize (options) {
+	// 使用原方法匯入屬性
+    this.callSuper('initialize', options)
+    // this.height = height || 100
+    // this.width = width || 100
   },
   getArea () {
     return this.height * this.width
@@ -167,14 +224,21 @@ const MyPie = new fabric.util.createClass(fabric.Rect, {
 	})
   }
 })
-var pie = new MyPie(200, 200)
+var pie = new MyPie({
+  top: 100,
+  left: 10,
+  width: 100,
+  height: 100
+})
 canvas.add(pie)
 
 
 const MyRadar = new fabric.util.createClass(fabric.Rect, {
-  initialize (height, width) {
-    this.height = height || 100
-    this.width = width || 100
+  initialize (options) {
+	// 使用原方法匯入屬性
+    this.callSuper('initialize', options)
+    // this.height = height || 100
+    // this.width = width || 100
   },
   getArea () {
     return this.height * this.width
@@ -228,7 +292,12 @@ const MyRadar = new fabric.util.createClass(fabric.Rect, {
 	})
   }
 })
-var radar = new MyRadar(200, 200)
+var radar = new MyRadar({
+  top: 100,
+  left: 10,
+  width: 100,
+  height: 100
+})
 canvas.add(radar)
 
 
@@ -239,10 +308,12 @@ for (var i = 0; i <= 360; i++) {
 		dataSets.push([r, i]);
 }
 const MyPolar = new fabric.util.createClass(fabric.Rect, {
-  initialize (height, width, dataSets) {
-    this.height = height || 100
-    this.width = width || 100
-    this.dataSets = dataSets;
+  initialize (options, dataSets) {
+	// 使用原方法匯入屬性
+    this.callSuper('initialize', options)
+    // this.height = height || 100
+    // this.width = width || 100
+	this.dataSets = dataSets;
   },
   getArea () {
     return this.height * this.width
@@ -274,9 +345,115 @@ const MyPolar = new fabric.util.createClass(fabric.Rect, {
     })
   }
 })
-var polar = new MyPolar(200, 200, dataSets)
+var polar = new MyPolar({
+  top: 100,
+  left: 10,
+  width: 100,
+  height: 100
+}, dataSets)
 canvas.add(polar)
 
+
+
+/*
+var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+var material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
+var cube = new THREE.Mesh( geometry, material );
+scene.add( cube );
+*/
+//------------------------------------------------------------
+// Three.js ray.intersects with offset canvas
+
+var container, camera, scene, renderer, mesh,
+
+    mouse = { x: 0, y: 0 },
+    objects = [],
+    
+    count = 0,
+
+    CANVAS_WIDTH = 500,
+    CANVAS_HEIGHT = 500;
+
+// info
+info = document.createElement( 'div' );
+info.style.position = 'absolute';
+info.style.top = '30px';
+info.style.width = '100%';
+info.style.textAlign = 'center';
+info.style.color = '#f00';
+info.style.backgroundColor = 'transparent';
+info.style.zIndex = '1';
+info.style.fontFamily = 'Monospace';
+info.innerHTML = 'INTERSECT Count: ' + count;
+info.style.userSelect = "none";
+info.style.webkitUserSelect = "none";
+info.style.MozUserSelect = "none";
+document.body.appendChild( info );
+
+container = document.getElementById( 'threeDim' );
+document.body.appendChild( container );
+
+renderer = new THREE.WebGLRenderer();
+renderer.setSize( CANVAS_WIDTH, CANVAS_HEIGHT );
+container.appendChild( renderer.domElement );
+
+scene = new THREE.Scene();
+
+camera = new THREE.PerspectiveCamera( 50, CANVAS_WIDTH / CANVAS_HEIGHT, 1, 1000 );
+camera.position.y = 150;
+camera.position.z = 500;
+camera.lookAt( scene.position );
+
+mesh = new THREE.Mesh( 
+    new THREE.BoxGeometry( 200, 200, 200, 1, 1, 1 ), 
+    new THREE.MeshBasicMaterial( { color : 0xff0000, wireframe: true } 
+) );
+scene.add( mesh );
+objects.push( mesh );
+
+// find intersections
+var vector = new THREE.Vector3();
+var raycaster = new THREE.Raycaster();
+
+// mouse listener
+/*document.addEventListener( 'mousedown', function( event ) {
+    
+    // For the following method to work correctly, set the canvas position *static*; margin > 0 and padding > 0 are OK
+    mouse.x = ( ( event.clientX - renderer.domElement.offsetLeft ) / renderer.domElement.width ) * 2 - 1;
+    mouse.y = - ( ( event.clientY - renderer.domElement.offsetTop ) / renderer.domElement.height ) * 2 + 1;
+    
+    // For this alternate method, set the canvas position *fixed*; set top > 0, set left > 0; padding must be 0; margin > 0 is OK
+    //mouse.x = ( ( event.clientX - container.offsetLeft ) / container.clientWidth ) * 2 - 1;
+    //mouse.y = - ( ( event.clientY - container.offsetTop ) / container.clientHeight ) * 2 + 1;
+
+    vector.set( mouse.x, mouse.y, 0.5 );
+    vector.unproject( camera );
+
+    raycaster.set( camera.position, vector.sub( camera.position ).normalize() );
+
+    intersects = raycaster.intersectObjects( objects );
+
+    if ( intersects.length > 0 ) {
+        
+        info.innerHTML = 'INTERSECT Count: ' + ++count;
+        
+    }
+
+}, false );*/
+
+function render() {
+
+    mesh.rotation.y += 0.01;
+    
+    renderer.render( scene, camera );
+
+}
+
+render()
+//(function animate() {
+//    requestAnimationFrame( animate );
+//    render();
+//})();
 
 </script>
 
