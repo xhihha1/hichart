@@ -666,8 +666,7 @@ function sample(){
 		}]
 	})
 
-	var canvas26 = document.getElementById("canvas26");
-    var context26= canvas26.getContext("2d");
+
     var A = new hichart('Gauge',context4,{x:0,y:600,width:150,height:150},{
 		gauge: option4,
 		Val_max: 1000,
@@ -682,6 +681,9 @@ function sample(){
 			linearGradient:[{position:0,color:"#000000"},{position:1,color:"#d9406f"}]
 		}]
 	})
+
+
+	var A = new hichart('MultiState',context4,{x:150,y:600,width:300,height:150},{});
 
 
 }// end

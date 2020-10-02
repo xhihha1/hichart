@@ -649,6 +649,10 @@ function sample1(){
 		}]
 	})
 
+	var canvas27 = document.getElementById("canvas27");
+    var context27= canvas27.getContext("2d");
+    var A = new hichart('MultiState',context27,{x:0,y:0,width:500,height:300},{});
+
 
 
 }
