@@ -50,6 +50,7 @@
     </head>
 <body>
     <canvas id="canvas" width='800' height='800'></canvas>
+	<textarea id="t"></textarea>
 	<div id="threeDim"></div>
 </body>
 
@@ -89,7 +90,8 @@ canvas.on('object:moving', function (event) {
 canvas.on('mouse:up', function (event) {
   if (isObjectMoving){
     isObjectMoving = false;
-    recCanvas(canvas) // fire this if finished
+    //recCanvas(canvas) // fire this if finished
+	document.getElementById('t').value = JSON.stringify(canvas.toJSON());
   } 
 });
 
@@ -104,8 +106,8 @@ const circle = new fabric.Circle({
 canvas.add(circle)//加入到canvas中
 
 const rect = new fabric.Rect({
-  top: 10,
-  left: 10,
+  top: Math.round(400 * Math.random()),
+  left: Math.round(400 * Math.random()),
   width: 100,
   height: 100,
   fill: 'rgba(51,51,51,1)'
@@ -113,6 +115,7 @@ const rect = new fabric.Rect({
 canvas.add(rect)//加入到canvas中
 
 const MyBar = new fabric.util.createClass(fabric.Rect, {
+	type: "bar",
   initialize (options) {
 	// 使用原方法匯入屬性
     this.callSuper('initialize', options)
@@ -133,8 +136,8 @@ const MyBar = new fabric.util.createClass(fabric.Rect, {
   }
 })
 var bar = new MyBar({
-  top: 100,
-  left: 10,
+  top: Math.round(400 * Math.random()),
+  left: Math.round(400 * Math.random()),
   width: 100,
   height: 100
 })
@@ -142,6 +145,7 @@ canvas.add(bar)
 
 
 const MyLine = new fabric.util.createClass(fabric.Rect, {
+	type: "line",
   initialize (options) {
 	// 使用原方法匯入屬性
     this.callSuper('initialize', options)
@@ -166,8 +170,8 @@ const MyLine = new fabric.util.createClass(fabric.Rect, {
   }
 })
 var line = new MyLine({
-  top: 100,
-  left: 10,
+  top: Math.round(400 * Math.random()),
+  left: Math.round(400 * Math.random()),
   width: 100,
   height: 100
 })
@@ -175,6 +179,7 @@ canvas.add(line)
 
 
 const MyArea = new fabric.util.createClass(fabric.Rect, {
+	type: "area",
   initialize (options) {
 	// 使用原方法匯入屬性
     this.callSuper('initialize', options)
@@ -206,8 +211,8 @@ const MyArea = new fabric.util.createClass(fabric.Rect, {
   }
 })
 var area = new MyArea({
-  top: 100,
-  left: 10,
+  top: Math.round(400 * Math.random()),
+  left: Math.round(400 * Math.random()),
   width: 100,
   height: 100
 })
@@ -216,6 +221,7 @@ canvas.add(area)
 
 
 const MyPie = new fabric.util.createClass(fabric.Rect, {
+	type: "pie",
   initialize (options) {
 	// 使用原方法匯入屬性
     this.callSuper('initialize', options)
@@ -259,8 +265,8 @@ const MyPie = new fabric.util.createClass(fabric.Rect, {
   }
 })
 var pie = new MyPie({
-  top: 100,
-  left: 10,
+  top: Math.round(400 * Math.random()),
+  left: Math.round(400 * Math.random()),
   width: 100,
   height: 100
 })
@@ -268,6 +274,7 @@ canvas.add(pie)
 
 
 const MyRadar = new fabric.util.createClass(fabric.Rect, {
+	type: "radar",
   initialize (options) {
 	// 使用原方法匯入屬性
     this.callSuper('initialize', options)
@@ -327,8 +334,8 @@ const MyRadar = new fabric.util.createClass(fabric.Rect, {
   }
 })
 var radar = new MyRadar({
-  top: 100,
-  left: 10,
+  top: Math.round(400 * Math.random()),
+  left: Math.round(400 * Math.random()),
   width: 100,
   height: 100
 })
@@ -342,6 +349,7 @@ for (var i = 0; i <= 360; i++) {
 		dataSets.push([r, i]);
 }
 const MyPolar = new fabric.util.createClass(fabric.Rect, {
+	type: "polar",
   initialize (options, dataSets) {
 	// 使用原方法匯入屬性
     this.callSuper('initialize', options)
@@ -380,8 +388,8 @@ const MyPolar = new fabric.util.createClass(fabric.Rect, {
   }
 })
 var polar = new MyPolar({
-  top: 100,
-  left: 10,
+  top: Math.round(400 * Math.random()),
+  left: Math.round(400 * Math.random()),
   width: 100,
   height: 100
 }, dataSets)
