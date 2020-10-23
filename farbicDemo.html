@@ -2,10 +2,14 @@
 <head>
 	<title>Bar Graph</title>
 <style>
-#canvas{background: #ffffff;
+/*#canvas{background: #ffffff;
         box-shadow:5px 5px 5px #ccc;
 		border:5px solid #eee;
-        margin-bottom:10px;}
+        margin-bottom:10px;}*/
+
+#canvas{
+		border:1px solid #eee;
+        }
 
 #threeDim {
     background-color: #000;
@@ -50,6 +54,22 @@
 </body>
 
 <script type="text/javascript">
+var rectObj = {
+  top: 10,
+  left: 10,
+  width: 100,
+  height: 100,
+  fill: 'rgba(51,51,51,1)'
+}
+/*
+fabric.Object.prototype.set({
+    transparentCorners: false,
+    cornerColor: 'rgba(102,153,255,0)',
+    cornerSize: 12,
+    padding: 0
+});*/
+
+
 var canvas = new fabric.Canvas('canvas', {
   // height: window.innerHeight - 50, // 讓畫布同視窗大小
   // width: window.innerWidth - 50, // 讓畫布同視窗大小
@@ -60,6 +80,20 @@ var canvas = new fabric.Canvas('canvas', {
   freeDrawingCursor: 'all-scroll', // 畫畫模式時鼠標模式
   //backgroundColor: 'rgb(255,255,255)' // 背景色,
 });//声明画布
+
+var isObjectMoving  = false;
+canvas.on('object:moving', function (event) {
+   isObjectMoving = true;
+});
+
+canvas.on('mouse:up', function (event) {
+  if (isObjectMoving){
+    isObjectMoving = false;
+    recCanvas(canvas) // fire this if finished
+  } 
+});
+
+
 
 const circle = new fabric.Circle({
   radius: 30,
@@ -355,6 +389,9 @@ canvas.add(polar)
 
 
 
+
+
+
 /*
 var geometry = new THREE.BoxGeometry( 1, 1, 1 );
 var material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
@@ -406,7 +443,7 @@ camera.lookAt( scene.position );
 
 mesh = new THREE.Mesh( 
     new THREE.BoxGeometry( 200, 200, 200, 1, 1, 1 ), 
-    new THREE.MeshBasicMaterial( { color : 0xff0000, wireframe: true } 
+    new THREE.MeshBasicMaterial( { color : 'rgb(255,255,0)', wireframe: true } 
 ) );
 scene.add( mesh );
 objects.push( mesh );
